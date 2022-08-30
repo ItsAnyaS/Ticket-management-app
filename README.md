@@ -1,6 +1,5 @@
 # README
 
-<<<<<<< HEAD
 ##Models/DB
 
 Theater
@@ -68,7 +67,7 @@ Seat
 1. talk about what models you need 
 2. wrtie down what method make sense to call on what objects
 3. 
-=======
+
 ## Database tables/models (M)
 
 Theater
@@ -125,8 +124,3 @@ Seats
 
 ## View - ReactJS (V)
 exists in the `client` folder
-
->>>>>>> nick-branch
-
-
-

@@ -128,11 +128,7 @@ GEM
       net-protocol
       timeout
     nio4r (2.5.8)
-<<<<<<< HEAD
     nokogiri (1.13.8-x86_64-darwin)
-=======
-    nokogiri (1.13.8-x86_64-linux)
->>>>>>> nick-branch
       racc (~> 1.4)
     public_suffix (5.0.0)
     puma (5.6.5)
@@ -215,11 +211,7 @@ GEM
     zeitwerk (2.6.0)
 
 PLATFORMS
-<<<<<<< HEAD
   x86_64-darwin-21
-=======
-  x86_64-linux
->>>>>>> nick-branch
 
 DEPENDENCIES
   bootsnap
@@ -239,14 +231,7 @@ DEPENDENCIES
   webdrivers
 
 RUBY VERSION
-<<<<<<< HEAD
    ruby 3.0.4p208
 
 BUNDLED WITH
    2.3.20
-=======
-   ruby 2.7.4p191
-
-BUNDLED WITH
-   2.3.17
->>>>>>> nick-branch

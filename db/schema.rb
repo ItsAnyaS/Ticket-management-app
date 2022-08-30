@@ -10,8 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema[7.0].define(version: 2022_08_30_183801) do
+ActiveRecord::Schema[7.0].define(version: 2022_08_30_183947) do
   create_table "movies", force: :cascade do |t|
     t.string "title"
     t.text "description"
@@ -19,30 +18,32 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_30_183801) do
     t.string "runtime"
     t.datetime "release_date"
     t.string "genre"
-=======
-ActiveRecord::Schema[7.0].define(version: 2022_08_30_183947) do
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "seats", force: :cascade do |t|
     t.integer "movie_id"
     t.integer "room_id"
     t.boolean "available", default: true
     t.boolean "is_accessible"
->>>>>>> nick-branch
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-<<<<<<< HEAD
   create_table "showtimes", force: :cascade do |t|
     t.integer "movie_id"
     t.datetime "start_time"
     t.datetime "end_time"
-=======
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "tickets", force: :cascade do |t|
     t.integer "movie_id"
     t.integer "showtime_id"
     t.integer "seat_id"
     t.integer "price"
->>>>>>> nick-branch
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
