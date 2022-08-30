@@ -40,7 +40,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_30_183947) do
   end
 
   create_table "tickets", force: :cascade do |t|
-    t.integer "movie_id"
     t.integer "showtime_id"
     t.integer "seat_id"
     t.integer "price"
