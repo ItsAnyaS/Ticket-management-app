@@ -9,7 +9,7 @@ Theater
 Room 
 - room_number
 - capacity:integer 
-- theater_id
+- theater_id:integer
 
 Movie
 - title

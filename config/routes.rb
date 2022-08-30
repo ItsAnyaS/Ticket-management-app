@@ -1,6 +1,15 @@
 Rails.application.routes.draw do
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  
+  # theaters
+  get "/theaters", to: "theaters#index"
+  post "/theaters", to: "theaters#create"
+  patch "/theaters/:id", to: "theaters#update"
+  delete "/theaters/:id", to: "theaters#destroy"
 
-  # Defines the root path route ("/")
-  # root "articles#index"
+  # rooms
+  get "/rooms", to: "rooms#index"
+  post "/rooms", to: "rooms#create"
+  patch "/rooms/:id", to: "rooms#update"
+  delete "/rooms/:id", to: "rooms#destroy"
+
 end
