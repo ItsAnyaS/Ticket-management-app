@@ -1,6 +1,5 @@
 class Seat < ApplicationRecord
-    # has_many :tickets
-    # belongs_to :movie
-    # belongs_to :room
-    
+    belongs_to :room
+    has_many :tickets
+    has_many :showtimes, through: :tickets
 end
