@@ -18,4 +18,3 @@ patch '/showtimes/:id', to: 'showtimes#update'
 delete '/showtimes/:id', to: 'showtimes#destroy'
 
 
-end
