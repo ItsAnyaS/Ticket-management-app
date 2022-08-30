@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  movie_id: 1
+  room_id: 1
+  available: false
+  is_accessible: false
+
+two:
+  movie_id: 1
+  room_id: 1
+  available: false
+  is_accessible: false
