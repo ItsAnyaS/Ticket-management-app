@@ -1,24 +1,62 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Database tables/models (M)
 
-Things you may want to cover:
+Theater
+- `name`
+- `street_address`
 
-* Ruby version
+Room
+- `room_no`
+- `capacity:integer`
+- `theater_id:integer`
 
-* System dependencies
+Movie
+- `name`
+- `description:text`
+- `rating`
+- `runtime`
+- `genre`
+- `release date:datetime`
 
-* Configuration
+Showtime
+- `movie_id:integer`
+- `start_time:datetime`
+- `end_time:datetime`
+  
+Ticket
+- `movie_id:integer`
+- `showtime_id:integer`
+- `seat_id:integer`
+- `price:integer`
 
-* Database creation
+Seat
+- `movie_id:integer`
+- `room_id:integer`
+- `available:boolean, default: true`
+- `is_accessible:boolean`
 
-* Database initialization
+Customer
 
-* How to run the test suite
+## Model methods
+```ruby
+theaters           # => Theater.all
+theater.movies     # => [list of movies]
+movie.showtimes    # => [list of showtimes]
+showtime.tickets   # => [list of tickets]
+ticket.seat        # => [seat associated with ticket]
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+## Controllers (C)
 
-* Deployment instructions
+Theaters
+Movies
+Showtimes
+Seats
 
-* ...
+## View - ReactJS (V)
+exists in the `client` folder
+
+
+
+
