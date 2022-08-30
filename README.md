@@ -1,25 +1,72 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+##Models/DB
 
-Things you may want to cover:
+Theater
+- name
+- street_address
 
-* Ruby version
+Room 
+- room_number
+- capacity:integer 
+- theater_id
 
-* System dependencies
+Movie
+- title
+- description
+- rating
+- runtime
+- realse_date:datetime
+- genre
 
-* Configuration
+Showtime
+- movie_id
+- start_time: datetime
+- end_time:datetime
 
-* Database creation
+Ticket
+- movie_id:integer
+- showtime_id:integer
+- seat_id:integer
+- price:integer
 
-* Database initialization
+Seat
+- room_id:integer
+- available:boolean, default true
+- is_accesible:boolean 
 
-* How to run the test suite
+User
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
 
-* ...
-# Ticket-management-app
+##Model methods
+```
+theaters => Theaters.all
+theater.movies => [list of movies]
+movie.showtimes => [list of showtimes ]
+showtimes.tickets => [list of all tickets]
+ticket.seat => [seat number]
+```
+
+seat belongs to ticket
+ticket belongs to showtime
+showtime belongs to movie
+movie belongs to theater
+
+##Contorllers
+
+Movies
+Showtimes
+Theater
+Seat
+
+
+##View
+
+
+1. talk about what models you need 
+2. wrtie down what method make sense to call on what objects
+3. 
+
+
+
