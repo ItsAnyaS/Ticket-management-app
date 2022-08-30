@@ -28,4 +28,5 @@ class TheatersController < ApplicationController
       end
   end
 
+
 end
