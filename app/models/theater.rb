@@ -1,4 +1,4 @@
 class Theater < ApplicationRecord
-    # has_many :theaters
-    # has_many :seats
+    has_many :rooms
+    has_many :seats, through: :rooms
 end

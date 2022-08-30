@@ -10,14 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
 ActiveRecord::Schema[7.0].define(version: 2022_08_30_191348) do
-  create_table "rooms", force: :cascade do |t|
-    t.string "room_number"
-    t.integer "capacity"
-    t.integer "theater_id"
-  end
-
   create_table "movies", force: :cascade do |t|
     t.string "title"
     t.text "description"
@@ -29,12 +22,14 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_30_191348) do
     t.datetime "updated_at", null: false
   end
 
-
-  create_table "theaters", force: :cascade do |t|
-    t.string "name"
-    t.string "street_address"
+  create_table "rooms", force: :cascade do |t|
+    t.string "room_number"
+    t.integer "capacity"
+    t.integer "theater_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
-  
+
   create_table "seats", force: :cascade do |t|
     t.integer "movie_id"
     t.integer "room_id"
@@ -48,6 +43,13 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_30_191348) do
     t.integer "movie_id"
     t.datetime "start_time"
     t.datetime "end_time"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "theaters", force: :cascade do |t|
+    t.string "name"
+    t.string "street_address"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
