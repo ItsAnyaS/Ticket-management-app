@@ -19,7 +19,7 @@ class TheatersController < ApplicationController
           render json: {error: theater.errors.full_messages}, status: 422
       end
   end
-
+end
 
   def destroy
       theater = Theater.find_by!(id: params[:id])

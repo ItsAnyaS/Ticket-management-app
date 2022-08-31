@@ -21,7 +21,7 @@ Rails.application.routes.draw do
   post '/movies', to: 'movies#create'
   patch '/movies/:id', to: 'movies#update'
   delete '/movies/:id', to: 'movies#destroy'
-  get '/sorted_movies/:term', to: 'movies#sort_movies'
+  get '/sorted_movies/:term/:theater_term', to: 'movies#sort_movies'
 
   # showtimes
 
