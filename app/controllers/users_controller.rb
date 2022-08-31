@@ -18,6 +18,7 @@ class UsersController < ApplicationController
       else
           render json: {error: user.errors.full_messages}, status: 422
       end
+    end
 
   def destroy
      user = User.find_by!(id: params[:id])

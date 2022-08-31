@@ -37,11 +37,11 @@ Rails.application.routes.draw do
   # seats
 
   # users
-  get '/users', to: 'user#index'
-  get '/users/:id', to: 'user#show'
-  post '/users', to: 'user#create'
-  patch '/users/:id', to: 'user#update'
-  delete '/users/:id', to: 'user#destroy'
+  get '/users', to: 'users#index'
+  get '/users/:id', to: 'users#show'
+  post '/users', to: 'users#create'
+  patch '/users/:id', to: 'users#update'
+  delete '/users/:id', to: 'users#destroy'
   
   # tickets
 
