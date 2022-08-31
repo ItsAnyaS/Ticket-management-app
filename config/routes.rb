@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   
   # theaters
   get "/theaters", to: "theaters#index"
+  get "/theaters/:id", to: "theaters#show"
   post "/theaters", to: "theaters#create"
   patch "/theaters/:id", to: "theaters#update"
   delete "/theaters/:id", to: "theaters#destroy"

@@ -6,6 +6,11 @@ class TheatersController < ApplicationController
       render json: theater
   end
 
+  def show
+    theater = Theater.find_by(id: params[:id])
+    render json: theater
+  end
+
   def create
       theater = Theater.create!(name: params[:name], street_address: params[:street_address])
       render json: theater
