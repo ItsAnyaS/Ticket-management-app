@@ -8,6 +8,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import MoviePage from './MoviePage';
 import CheckoutStage1 from './CheckoutStage1'
 import AuthPage from './AuthPage'
+import MyTickets from './MyTickets';
 
 export const MovieContext = createContext();
 export const TheaterContext = createContext();
@@ -20,6 +21,7 @@ return (
     <MovieContext.Provider value={value}>
     <Router>
     <Navbar/>
+    <MyTickets />
     <Routes>
       <Route exact key={1} path='/' element={<Home />}/>
       <Route exact key={2} path='/search' element={<SearchPage/>}/>

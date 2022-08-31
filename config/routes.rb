@@ -41,11 +41,16 @@ Rails.application.routes.draw do
   # users
   get '/users', to: 'users#index'
   get '/users/:id', to: 'users#show'
+  get '/users/:id/tickets_showtimes', to: 'users#show_with_ticket_showtime'
   post '/users', to: 'users#create'
   patch '/users/:id', to: 'users#update'
   delete '/users/:id', to: 'users#destroy'
   
   # tickets
+
+  get '/tickets', to: 'tickets#index'
+  get '/tickets/:id', to: 'tickets#show'
+
 
   # auth
 
