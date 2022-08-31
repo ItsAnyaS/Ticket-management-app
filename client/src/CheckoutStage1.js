@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import ShowtimeButton from './ShowtimeButton'
 import { useContext } from 'react'
 import { MovieContext } from './App'
+import { NavLink } from 'react-router-dom'
 
 const CheckoutStage1 = () => {
 
@@ -75,6 +76,7 @@ console.log(globalMovie)
                         {showtimes.map((showtime) => {
                             const {id, movie_id, theater_id, start_time, end_time} = showtime
                             return (
+                                <NavLink to='/checkout/2'>
                                 <ShowtimeButton 
                                     key={id}
                                     id={id} 
@@ -83,6 +85,7 @@ console.log(globalMovie)
                                     startTime={start_time} 
                                     endTime={end_time}
                                 />
+                                </NavLink>
                             )
                         })}
 

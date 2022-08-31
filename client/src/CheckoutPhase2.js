@@ -1,11 +1,15 @@
-import { useState, useEffect } from "react"
+import { useState, useEffect, useContext } from "react"
 import './CheckoutPhase2.css'
 
+import { MovieContext } from "./App"
+
 const CheckoutPhaase2 = () => {
+    
+    const {globalMovie, setGlobalMovie} = useContext(MovieContext)
     const [seats, setSeats] = useState([])
     const [selectedSeat, setSelectedSeat] = useState()
     const getSeats = async() => {
-        let req = await fetch('http://localhost:3000/rooms/1/seats')
+        let req = await fetch(`http://localhost:3000/rooms/${globalMovie.movie.id}/seats`)
         let res = await req.json()
         setSeats(res)
     }
