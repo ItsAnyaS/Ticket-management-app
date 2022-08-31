@@ -11,6 +11,17 @@ def show
     render json: movie
 end
 
+
+def show_random
+    movie = Movie.find_by!(id: rand(Movie.all.length))
+    render json: movie
+end
+
+def show_limited
+    movies = Movie.limited_random_5
+    render json: movies
+end
+
 def create
     movie = Movie.create(title: params[:title], description: params[:description], rating: params[:rating], runtime: params[:runtime], release_date: params[:release_date], genre: params[:genre] )
     render json: movie
