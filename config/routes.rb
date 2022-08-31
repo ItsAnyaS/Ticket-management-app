@@ -30,6 +30,16 @@ Rails.application.routes.draw do
   patch '/showtimes/:id', to: 'showtimes#update'
   delete '/showtimes/:id', to: 'showtimes#destroy'
 
+  # seats
+
+  # users
+  get '/users', to: 'user#index'
+  get '/user/:id', to: 'user#show'
+  post '/user', to: 'user#create'
+  patch '/user/:id', to: 'user#update'
+  delete '/user/:id', to: 'user#destroy'
+  
+  # tickets
 
 end
 
