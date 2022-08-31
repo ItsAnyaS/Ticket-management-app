@@ -33,6 +33,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_31_000128) do
   create_table "seats", force: :cascade do |t|
     t.integer "movie_id"
     t.integer "room_id"
+    t.integer "showtime_id"
     t.boolean "available", default: true
     t.boolean "is_accessible"
     t.datetime "created_at", null: false
