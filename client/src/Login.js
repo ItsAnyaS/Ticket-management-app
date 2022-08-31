@@ -1,7 +1,9 @@
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 const Login = () => {
     const [inputs, setInputs] = useState({email: '', password: ''})
+    let navigate = useNavigate()
 
     const handleChange = (e) => {
         setInputs({...inputs,
@@ -22,9 +24,10 @@ const Login = () => {
         })
         if (req.ok) {
             let res = await req.json()
-            console.log(res)
-            let tommorow = new Date(new Date().getTime() + (24 * 60 * 60 * 1000));
-            document.cookie = `hash=${res.hashed_user}; expires=` + tommorow.toUTCString()
+            let tomorrow = new Date(new Date().getTime() + (24 * 60 * 60 * 1000));
+            document.cookie = `hash=${res.hashed_user}; expires=` + tomorrow.toUTCString()
+            console.log('cookie', document.cookie)
+            navigate('/')
         } else {
             document.cookie = ''
             alert('failed')

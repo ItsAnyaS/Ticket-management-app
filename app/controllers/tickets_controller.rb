@@ -3,13 +3,17 @@ class TicketsController < ApplicationController
 
     def index
         tickets = Ticket.all
-        render json: tickets
+        render json: tickets, include: :showtime
     end
 
     def show 
         ticket = Ticket.find_by!(id: params[:id])
-        render json: ticket
+        render json: ticket, include: :showtime
     end
 
-end
+    def show_showtime
+        ticket = Ticket.find_by!(id: params[:id])
+        render json: ticket.showtime
+    end
+
 end

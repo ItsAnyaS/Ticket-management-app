@@ -8,6 +8,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import MoviePage from './MoviePage';
 import CheckoutStage1 from './CheckoutStage1'
 import AuthPage from './AuthPage'
+import MyTickets from './MyTickets';
 
 export const MovieContext = createContext();
 export const TheaterContext = createContext();
@@ -27,6 +28,7 @@ return (
       <Route exact key={3} path='/checkout/1' element={<CheckoutStage1/>}/>
       <Route key={4} path='/checkout/2' element={<CheckoutPhaase2/>}/>
       <Route exact key={5} path='/authenticate' element={<AuthPage/>}/>
+      <Route exact key={6} path='/my_tickets' element={<MyTickets />}/>
     </Routes>
     </Router>
     </MovieContext.Provider>
