@@ -1,8 +1,8 @@
 import MovieCard from "./MovieCard"
-
-import { useState, useEffect } from "react"
+import { MovieContext } from "./App"
+import { useState, useEffect, useContext } from "react"
 const SearchPage = () => {
-
+    const {globalMovie, setGlobalMovie} = useContext(MovieContext)
     const [searchTerm, setSearchTerm] = useState()
     const [theater, setTheater] = useState('none')
     const [movies, setMovies] = useState([])
@@ -28,7 +28,6 @@ const SearchPage = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        console.log(searchTerm)
         getData()
     }
 
@@ -41,6 +40,11 @@ const SearchPage = () => {
     const handleTheaterChange = (e) => {
         let term = e.target.value
         setTheater(term)
+        setGlobalMovie({
+            ...globalMovie,
+            theater: term
+        })
+        console.log(globalMovie)
     }
 return (
     <div>

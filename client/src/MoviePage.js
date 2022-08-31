@@ -1,21 +1,46 @@
 import { useState, useEffect } from 'react'
-// import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate, NavLink } from "react-router-dom";
+import { MovieContext } from './App';
+import { useContext } from 'react';
 
 const MoviePage = () => {
     const [movie, setMovie] = useState({})
-    // let { id } = useParams();
+    const {globalMovie, setGlobalMovie} = useContext(MovieContext)
+console.log(globalMovie)
+let newTheater = ''
+    const handleNoTheater = async() => {
+        if (!globalMovie.theater){
+            let req = await fetch(`http://localhost:3000//theater_by_movie/${globalMovie.movie.id}`)
+            let res = await req.json()
+            res.forEach(theater => {
+                theater.movies.forEach(movie => {
+                    if (movie.id == globalMovie.movie.id){
+                        setGlobalMovie({
+                            ...globalMovie,
+                            theater: theater
+                        })
+                        return
+                    }
+
+                })
+
+        
+            })
+        } 
+    }
+    handleNoTheater()
+    console.log(newTheater)
 
     useEffect(()=> {
         const getMovie = async () => {
-        let req = await fetch(`http://localhost:3000/movies/1`)
+        let req = await fetch(`http://localhost:3000/movies/${globalMovie.movie?.id}`)
         let res = await req.json()
         setMovie(res)
-        console.log(res)
         }
         getMovie()
     },[])
 
-    // let navigate = useNavigate();
+    let navigate = useNavigate();
 
     const handleClick = (e) => {
     //   navigate("../showtimes", { replace: true });
@@ -34,7 +59,7 @@ const MoviePage = () => {
                 {/* change src to `{movie.image}`` */}
                 <img src="./topgun.jpeg" alt="Movie poster" width="1100" height="600"/>
             </div>
-            <button onClick={() => handleClick()}>Get Tickets</button>
+           <NavLink to='/checkout/1'> <button >Get Tickets</button></NavLink>
             <div key={movie.id}>
                 <h4>{movie.title}</h4>
                 <p>{movie.runtime}</p>

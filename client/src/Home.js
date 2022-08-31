@@ -1,8 +1,10 @@
 import MovieCard from './MovieCard'
-import {useState, useEffect} from 'react'
+import {useState, useEffect, useContext} from 'react'
 import {NavLink} from 'react-router-dom'
+import { MovieContext } from './App'
 
 const Home = () => {
+    const {globalMovie, setGlobalMovie} = useContext(MovieContext)
     const [randomMovie, setRandomMovie] = useState()
     const [movies, setMovies] = useState([])
   
@@ -21,10 +23,10 @@ const Home = () => {
     }
   
     getMovies()
+    console.log(globalMovie)
   },[])
     return (
       <div className="App">
-       
         <div className='hero'>
           <h2>{randomMovie?.title}</h2>
           <p>Short blerb about how greate the movie is and why you should spend money on it.</p>
