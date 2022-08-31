@@ -31,7 +31,12 @@ Rails.application.routes.draw do
   # seats
 
   # users
-
+  get '/users', to: 'user#index'
+  get '/user/:id', to: 'user#show'
+  post '/user', to: 'user#create'
+  patch '/user/:id', to: 'user#update'
+  delete '/user/:id', to: 'user#destroy'
+  
   # tickets
 
 end
