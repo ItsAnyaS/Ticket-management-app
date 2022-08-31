@@ -9,7 +9,7 @@ const SearchPage = () => {
         console.log(res)
         setMovies(res)
     }
-    
+
     useEffect(()=> {
       
 
@@ -20,6 +20,11 @@ const SearchPage = () => {
         e.preventDefault()
         console.log(searchTerm)
         getData()
+    }
+
+    const handleChange = (e) => {
+        let term = e.target.value
+        term.replace(' ', '-')
     }
 
 return (
