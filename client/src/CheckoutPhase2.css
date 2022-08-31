@@ -1,0 +1,19 @@
+.seat-selection {
+
+}
+
+.seat-selection-container{
+display: flex;
+
+}
+
+.seat-selection-container button {
+    background-color: transparent;
+    width: 75px;
+    height: 75px;
+}
+
+.taken {
+    background-color: black;
+}
+

@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react"
+import './CheckoutPhase2.css'
 
 const CheckoutPhaase2 = () => {
     const [seats, setSeats] = useState([])
@@ -14,16 +15,15 @@ const CheckoutPhaase2 = () => {
 
 
 
-console.log(selectedSeat)
 
 return (
-    <div>
+    <div className="seat-selection">
         <h2>Please Select a seat</h2>
-        <div>
+        <div className="seat-selection-container">
 
             {seats.map(seat => {
                 return (
-                    <div key={seat?.id}   className="seat" style={{backgroundColor: 'red', height: '50px', width: '50px', margin: '20px'}}>
+                    <div key={seat?.id}   className={`seat ${seat.available ? '': 'taken'} `}>
                         <button value={seat?.id} onClick={(e)=> {console.log(e.target.value)}} >{seat?.id}</button>
                     </div>
                 )
