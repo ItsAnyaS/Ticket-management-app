@@ -1,6 +1,6 @@
 
 import './App.css';
-
+import CheckoutPhaase2 from './CheckoutPhase2';
 import Home from './Home'
 import Navbar from './Navbar';
 import SearchPage from './SearchPage';
@@ -10,7 +10,8 @@ return (
   <div>
     <Navbar/>
     {/* <Home/> */}
-<SearchPage/>
+{/* <SearchPage/> */}
+<CheckoutPhaase2/>
   </div>
 )
  

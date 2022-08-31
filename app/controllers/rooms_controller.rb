@@ -6,6 +6,12 @@ class RoomsController < ApplicationController
     render json: room
   end
 
+  def get_seats
+    room = Room.find_by!(id: params[:room_id])
+    seats = Seat.where(room_id: room.id)
+    render json: seats
+  end
+
   def create
     room = Room.create!(room_number: params[:room_number], capacity: params[:capacity], theater_id: params[:theater_id])
     render json: room
@@ -18,6 +24,7 @@ class RoomsController < ApplicationController
     else
         render json: {error: room.errors.full_messages}, status: 422
     end
+  end
 
   def destroy
     room = Room.find_by!(id: params[:id])
@@ -26,5 +33,6 @@ class RoomsController < ApplicationController
     else
         render json: {error: room.errors.full_messages}, status: 422
     end
+  end
 end
 
