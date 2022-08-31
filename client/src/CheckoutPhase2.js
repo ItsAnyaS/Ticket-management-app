@@ -9,7 +9,7 @@ const CheckoutPhaase2 = () => {
     const [seats, setSeats] = useState([])
     const [selectedSeat, setSelectedSeat] = useState()
     const getSeats = async() => {
-        let req = await fetch(`http://localhost:3000/rooms/${globalMovie.movie.id}/seats`)
+        let req = await fetch(`http://localhost:3000/rooms/${globalMovie.movie.id}/seats/${globalMovie.showtime_id}`)
         let res = await req.json()
         setSeats(res)
     }

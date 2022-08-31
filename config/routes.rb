@@ -12,7 +12,7 @@ Rails.application.routes.draw do
 
   # rooms
   get "/rooms", to: "rooms#index"
-  get '/rooms/:room_id/seats', to: 'rooms#get_seats'
+  get '/rooms/:room_id/seats/:showtime_id', to: 'rooms#get_seats'
   post "/rooms", to: "rooms#create"
   patch "/rooms/:id", to: "rooms#update"
   delete "/rooms/:id", to: "rooms#destroy"

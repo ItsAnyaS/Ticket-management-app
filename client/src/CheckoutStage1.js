@@ -4,6 +4,7 @@ import { useContext } from 'react'
 import { MovieContext } from './App'
 import { NavLink } from 'react-router-dom'
 
+
 const CheckoutStage1 = () => {
 
     const {globalMovie, setGlobalMovie} = useContext(MovieContext)
@@ -11,7 +12,7 @@ const CheckoutStage1 = () => {
     const [theater, setTheater] = useState({})
     const [movie, setMovie] = useState({})
     const [showtimes, setShowtimes] = useState([])
-console.log(globalMovie)
+    console.log(globalMovie)
     // show method is technically not needed if we are fetching all theaters, it depends
     // useEffect(() => {
     //     const getTheater = async (theaterId = 1) => {
@@ -76,7 +77,7 @@ console.log(globalMovie)
                         {showtimes.map((showtime) => {
                             const {id, movie_id, theater_id, start_time, end_time} = showtime
                             return (
-                                <NavLink to='/checkout/2'>
+                                <NavLink to={`/checkout/2`} onClick={()=> {setGlobalMovie({...globalMovie, showtime_id: showtime.id})}}>
                                 <ShowtimeButton 
                                     key={id}
                                     id={id} 

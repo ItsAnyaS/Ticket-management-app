@@ -7,8 +7,8 @@ class RoomsController < ApplicationController
   end
 
   def get_seats
-    room = Room.find_by!(id: params[:room_id])
-    seats = Seat.where(room_id: room.id)
+
+    seats = Seat.where(room_id: params[:room_id], showtime_id: params[:showtime_id])
     render json: seats
   end
 

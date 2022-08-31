@@ -13,7 +13,7 @@ export const MovieContext = createContext();
 export const TheaterContext = createContext();
 
 function App() {
-  const [globalMovie, setGlobalMovie] = useState({movie: {}, theater: ''})
+  const [globalMovie, setGlobalMovie] = useState({movie: {}, theater: '', showetime_id: ''})
   const value = useMemo(() => ({ globalMovie, setGlobalMovie }), [globalMovie, setGlobalMovie]);
 return (
   <div>
@@ -25,7 +25,7 @@ return (
       <Route exact key={2} path='/search' element={<SearchPage/>}/>
       <Route exact key={5} path='/movie' element={<MoviePage/>}/>
       <Route exact key={3} path='/checkout/1' element={<CheckoutStage1/>}/>
-      <Route exact key={4} path='/checkout/2' element={<CheckoutPhaase2/>}/>
+      <Route key={4} path='/checkout/2' element={<CheckoutPhaase2/>}/>
       <Route exact key={5} path='/authenticate' element={<AuthPage/>}/>
     </Routes>
     </Router>
