@@ -1,8 +1,9 @@
+import { NavLink } from "react-router-dom"
 const Navbar = () => {
 return (
     <nav>
     <div>Logo</div>
-    <button>Get Tickets</button>
+    <NavLink to='/search'> <button>Get Tickets</button></NavLink>
     <input type='text' placeholder='search'/>
   </nav>
 )
