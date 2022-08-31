@@ -9,10 +9,17 @@ class Movie < ApplicationRecord
 
     def self.search(term, theater_term)
         theater_term = theater_term.tr('-', ' ')
-        theater = Theater.find_by!(name: theater_term)
-        movies = theater.movies
-        term = term.tr('-', ' ')
-        movies.filter { |movie| movie.title.downcase.include?(term.downcase)}
+        puts theater_term
+        if theater_term == 'none'
+            movies = Movie.all
+            term = term.tr('-', ' ')
+            movies.filter { |movie| movie.title.downcase.include?(term.downcase)}
+        else 
+            theater = Theater.find_by!(name: theater_term)
+            movies = theater.movies
+            term = term.tr('-', ' ')
+            movies.filter { |movie| movie.title.downcase.include?(term.downcase)}
+        end
     end
 
 end

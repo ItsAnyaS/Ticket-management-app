@@ -4,7 +4,7 @@ import { useState, useEffect } from "react"
 const SearchPage = () => {
 
     const [searchTerm, setSearchTerm] = useState()
-    const [theater, setTheater] = useState()
+    const [theater, setTheater] = useState('none')
     const [movies, setMovies] = useState([])
     const [allTheaters, setAllTheaters] = useState([])
     const getData = async () => {
@@ -47,7 +47,7 @@ return (
         <form onSubmit={handleSubmit}>
             <input type='text' onChange={handleChange} />
             <select onChange={handleTheaterChange}>
-                <option defaultValue>---select a theater---</option>
+                <option value ='none' defaultValue>---select a theater---</option>
                 { allTheaters.map(theater => {
             let theaterParams = theater?.name.replace(' ', '-')
             return (
