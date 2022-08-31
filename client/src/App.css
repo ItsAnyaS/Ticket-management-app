@@ -1,11 +1,70 @@
 nav {
   display: flex;
   gap: 20px;
+  height: 8vh;
+  background-color: black;
+  z-index: 100;
+  align-items: center;
 }
+
+nav input {
+  height: 15px;
+}
+
+
+.red-btn {
+    background-color: #E51937;
+    border: none;
+    border-radius: 30px;
+    height: 5vh;
+    width: 8vw;
+    font-size: 1.4em;
+    color: white;
+    font-weight: 600;
+    
+  }
+
+  .btn-hover {
+    transform: scale(1.1);
+    transition: 100s;
+  }
+
+
+  .nav-cta {
+    background-color: #E51937;
+    border: none;
+    border-radius: 30px;
+    height: 3vh;
+    width: 6vw;
+    font-size: 1em;
+    color: white;
+    font-weight: 600;
+  }
+
+  .nav-cta:hover {
+    transform: scale(1.1);
+    transition: 100s;
+  }
 
 .movie-container {
   display: flex;
   flex-wrap: wrap;
   gap: 50px;
   margin: 2em 1em;
+}
+
+.login {
+  background-color: white;
+  border: none;
+  border-radius: 30px;
+  height: 3vh;
+  width: 6vw;
+  font-size: 1em;
+  color: #E51937;
+  font-weight: 600;
+}
+
+.login:hover {
+  transform: scale(1.1);
+  transition: 100s;
 }

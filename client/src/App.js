@@ -13,7 +13,7 @@ export const MovieContext = createContext();
 export const TheaterContext = createContext();
 
 function App() {
-  const [globalMovie, setGlobalMovie] = useState({movie: {}, theater: '', showetime_id: ''})
+  const [globalMovie, setGlobalMovie] = useState({movie: {}, theater: '', showtime_id: ''})
   const value = useMemo(() => ({ globalMovie, setGlobalMovie }), [globalMovie, setGlobalMovie]);
 return (
   <div>
