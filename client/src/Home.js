@@ -1,8 +1,10 @@
 import MovieCard from './MovieCard'
-import {useState, useEffect} from 'react'
+import {useState, useEffect, useContext} from 'react'
 import {NavLink} from 'react-router-dom'
+import { MovieContext } from './App'
 
 const Home = () => {
+    const {globalMovie, setGlobalMovie} = useContext(MovieContext)
     const [randomMovie, setRandomMovie] = useState()
     const [movies, setMovies] = useState([])
   
@@ -11,6 +13,7 @@ const Home = () => {
       let req = await fetch('http://localhost:3000/random_movie')
       let res = await req.json()
       setRandomMovie(res)
+      setGlobalMovie(res)
     }
     getRandomMovie()
   
@@ -21,6 +24,7 @@ const Home = () => {
     }
   
     getMovies()
+    console.log(globalMovie)
   },[])
     return (
       <div className="App">
