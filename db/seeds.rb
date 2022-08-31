@@ -29,11 +29,11 @@ s3 = Seat.create!(movie_id: m1.id, room_id: r1.id, available: true, is_accessibl
 s4 = Seat.create!(movie_id: m2.id, room_id: r2.id, available: true, is_accessible: false)
 s5 = Seat.create!(movie_id: m3.id, room_id: r3.id, available: true, is_accessible: false)
 
-st1 = Showtime.create!(movie_id: m1.id, start_time: 2.hours.from_now, end_time: 4.hours.from_now)
-st2 = Showtime.create!(movie_id: m2.id, start_time: 2.hours.from_now, end_time: 4.hours.from_now)
-st3 = Showtime.create!(movie_id: m3.id, start_time: 2.hours.from_now, end_time: 4.hours.from_now)
-st4 = Showtime.create!(movie_id: m4.id, start_time: 2.hours.from_now, end_time: 4.hours.from_now)
-st5 = Showtime.create!(movie_id: m5.id, start_time: 2.hours.from_now, end_time: 4.hours.from_now)
+st1 = Showtime.create!(movie_id: m1.id, theater_id: t1.id, start_time: 2.hours.from_now, end_time: 4.hours.from_now)
+st2 = Showtime.create!(movie_id: m2.id, theater_id: t2.id, start_time: 2.hours.from_now, end_time: 4.hours.from_now)
+st3 = Showtime.create!(movie_id: m3.id, theater_id: t3.id, start_time: 2.hours.from_now, end_time: 4.hours.from_now)
+st4 = Showtime.create!(movie_id: m4.id, theater_id: t4.id, start_time: 2.hours.from_now, end_time: 4.hours.from_now)
+st5 = Showtime.create!(movie_id: m5.id, theater_id: t5.id, start_time: 2.hours.from_now, end_time: 4.hours.from_now)
 
 t1 = Ticket.create!(showtime_id: st1.id, seat_id: s1.id, price: 20)
 t2 = Ticket.create!(showtime_id: st2.id, seat_id: s2.id, price: 20)

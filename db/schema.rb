@@ -41,6 +41,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_30_191348) do
 
   create_table "showtimes", force: :cascade do |t|
     t.integer "movie_id"
+    t.integer "theater_id"
     t.datetime "start_time"
     t.datetime "end_time"
     t.datetime "created_at", null: false
