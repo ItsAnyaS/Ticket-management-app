@@ -1,12 +1,16 @@
 import { useState, useEffect } from 'react'
 import ShowtimeButton from './ShowtimeButton'
+import { useContext } from 'react'
+import { MovieContext } from './App'
 
 const CheckoutStage1 = () => {
+
+    const {globalMovie, setGlobalMovie} = useContext(MovieContext)
     const [allTheaters, setAllTheaters] = useState([])
     const [theater, setTheater] = useState({})
     const [movie, setMovie] = useState({})
     const [showtimes, setShowtimes] = useState([])
-
+console.log(globalMovie)
     // show method is technically not needed if we are fetching all theaters, it depends
     // useEffect(() => {
     //     const getTheater = async (theaterId = 1) => {
@@ -18,20 +22,20 @@ const CheckoutStage1 = () => {
     //     getTheater()
     // }, [])
 
-    useEffect(() => {
-        const getAllTheaters = async (theaterId = 1) => {
-            let req = await fetch('http://localhost:3000/theaters')
-            let res = await req.json()
-            console.log('theaters', res)
-            setAllTheaters(res)
-            setTheater(res[theaterId - 1])
-        }
-        getAllTheaters()
-    }, [])
+    // useEffect(() => {
+    //     const getAllTheaters = async (theaterId = 1) => {
+    //         let req = await fetch('http://localhost:3000/theaters')
+    //         let res = await req.json()
+    //         console.log('theaters', res)
+    //         setAllTheaters(res)
+    //         setTheater(res[theaterId - 1])
+    //     }
+    //     getAllTheaters()
+    // }, [])
 
     useEffect(() => {
-        const getMovie = async (movieId = 1) => {
-            let req = await fetch(`http://localhost:3000/movies/${movieId}`)
+        const getMovie = async () => {
+            let req = await fetch(`http://localhost:3000/movies/${globalMovie.movie.id}`)
             let res = await req.json()
             console.log('movie', res)
             setMovie(res)
