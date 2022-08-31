@@ -7,11 +7,19 @@ class Movie < ApplicationRecord
         sadness
     end
 
-    def self.search(term)
-        movies = Movie.all
-        term = term.tr('-', ' ')
-        puts term
-        movies.filter { |movie| movie.title.downcase.include?(term.downcase)}
+    def self.search(term, theater_term)
+        theater_term = theater_term.tr('-', ' ')
+        puts theater_term
+        if theater_term == 'none'
+            movies = Movie.all
+            term = term.tr('-', ' ')
+            movies.filter { |movie| movie.title.downcase.include?(term.downcase)}
+        else 
+            theater = Theater.find_by!(name: theater_term)
+            movies = theater.movies
+            term = term.tr('-', ' ')
+            movies.filter { |movie| movie.title.downcase.include?(term.downcase)}
+        end
     end
 
 end

@@ -1,3 +1,4 @@
+import MovieCard from './MovieCard'
 import {useState, useEffect} from 'react'
 
 const Home = () => {
@@ -38,12 +39,7 @@ const Home = () => {
    
   {movies.map(movie => {
     return (
-      <div key={movie.id}>
-        <img/>
-        <h4>{movie?.title}</h4>
-        <p>{movie?.runtime}</p>
-        <p>{movie?.rating}</p>
-      </div>
+      <MovieCard movie={movie} />
     )
   })}
    </div>

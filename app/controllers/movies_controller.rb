@@ -40,7 +40,7 @@ def destroy
 end
 
 def sort_movies
-   movies =  Movie.search(params[:term])
+   movies =  Movie.search(params[:term], params[:theater_term])
     render json: movies
 end
 
