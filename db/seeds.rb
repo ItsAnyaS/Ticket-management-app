@@ -30,7 +30,7 @@ st4 = Showtime.create!(movie_id: m4.id, theater_id: t4.id, start_time: 2.hours.f
 st5 = Showtime.create!(movie_id: m5.id, theater_id: t5.id, start_time: 2.hours.from_now, end_time: 4.hours.from_now)
 
 
-s1 = Seat.create!(movie_id: m1.id, room_id: r1.id, showtime_id: st1.id, available: true, is_accessible: false)
+s1 = Seat.create!(movie_id: m1.id, room_id: r1.id, showtime_id: st1.id, available: false, is_accessible: false)
 s2 = Seat.create!(movie_id: m1.id, room_id: r1.id, showtime_id: st2.id, available: true, is_accessible: false)
 s3 = Seat.create!(movie_id: m1.id, room_id: r1.id, showtime_id: st3.id, available: true, is_accessible: false)
 s4 = Seat.create!(movie_id: m2.id, room_id: r2.id, showtime_id: st4.id, available: true, is_accessible: false)

@@ -15,5 +15,7 @@ display: flex;
 
 .taken {
     background-color: black;
+    width: 75px;
+    height: 75px;
 }
 

@@ -14,7 +14,10 @@ const CheckoutPhaase2 = () => {
     }, [])
 
 
-
+console.log(seats)
+const handleSeatSelection = (e) => {
+    setSelectedSeat(e.target.value)
+}
 
 return (
     <div className="seat-selection">
@@ -22,9 +25,13 @@ return (
         <div className="seat-selection-container">
 
             {seats.map(seat => {
+                console.log()
                 return (
                     <div key={seat?.id}   className={`seat ${seat.available ? '': 'taken'} `}>
-                        <button value={seat?.id} onClick={(e)=> {console.log(e.target.value)}} >{seat?.id}</button>
+                        {
+                            seat.available ? 
+                        <button value={seat?.id} onClick={handleSeatSelection} >{seat?.id}</button> : <div>X</div>
+                        }
                     </div>
                 )
             })}
