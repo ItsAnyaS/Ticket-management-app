@@ -24,13 +24,14 @@ const SearchPage = () => {
 
     const handleChange = (e) => {
         let term = e.target.value
-        term.replace(' ', '-')
+       term = term.replace(' ', '-')
+        setSearchTerm(term)
     }
 
 return (
     <div>
         <form onSubmit={handleSubmit}>
-            <input type='text' onChange={(e)=> {setSearchTerm(e.target.value)}} />
+            <input type='text' onChange={handleChange} />
             <button>Search</button>
         </form>
         <h2>Movies matching your search:</h2>
