@@ -9,7 +9,6 @@ class Movie < ApplicationRecord
 
     def self.search(term, theater_term)
         theater_term = theater_term.tr('-', ' ')
-        puts theater_term
         theater = Theater.find_by!(name: theater_term)
         movies = theater.movies
         term = term.tr('-', ' ')

@@ -47,11 +47,11 @@ return (
         <form onSubmit={handleSubmit}>
             <input type='text' onChange={handleChange} />
             <select onChange={handleTheaterChange}>
-                <option selected>---select a theater---</option>
+                <option defaultValue>---select a theater---</option>
                 { allTheaters.map(theater => {
             let theaterParams = theater?.name.replace(' ', '-')
             return (
-                <option key={theater?.id} value={theaterParams}>{theater?.name}</option>
+                <option key={theater.id} value={theaterParams}>{theater?.name}</option>
             )
         })}
             </select>
