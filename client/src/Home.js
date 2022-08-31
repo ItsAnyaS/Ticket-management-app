@@ -13,7 +13,6 @@ const Home = () => {
       let req = await fetch('http://localhost:3000/random_movie')
       let res = await req.json()
       setRandomMovie(res)
-      setGlobalMovie(res)
     }
     getRandomMovie()
   
@@ -28,7 +27,6 @@ const Home = () => {
   },[])
     return (
       <div className="App">
-       
         <div className='hero'>
           <h2>{randomMovie?.title}</h2>
           <p>Short blerb about how greate the movie is and why you should spend money on it.</p>

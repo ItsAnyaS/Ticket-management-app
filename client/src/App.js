@@ -9,8 +9,8 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 export const MovieContext = createContext();
 
 function App() {
-  const [gloablMovie, setGlobalMovie] = useState({movie: 'Friends'})
-  const value = useMemo(() => ({ gloablMovie, setGlobalMovie }), [gloablMovie, setGlobalMovie]);
+  const [globalMovie, setGlobalMovie] = useState()
+  const value = useMemo(() => ({ globalMovie, setGlobalMovie }), [globalMovie, setGlobalMovie]);
 return (
   <div>
     <MovieContext.Provider value={value}>
