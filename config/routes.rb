@@ -16,7 +16,7 @@ Rails.application.routes.draw do
 
   # movies
   get '/movies', to: 'movies#index'
-  get '/movie/:id', to: 'movies#show'
+  get '/movies/:id', to: 'movies#show'
   get '/random_movie', to: 'movies#show_random'
   get '/random_movies_5', to: 'movies#show_limited'
   post '/movies', to: 'movies#create'
@@ -27,7 +27,7 @@ Rails.application.routes.draw do
   # showtimes
 
   get '/showtimes', to: 'showtimes#index'
-  get '/showtime/:id', to: 'showtimes#show'
+  get '/showtimes/:id', to: 'showtimes#show'
   post '/showtimes', to: 'showtimes#create'
   patch '/showtimes/:id', to: 'showtimes#update'
   delete '/showtimes/:id', to: 'showtimes#destroy'
@@ -36,10 +36,10 @@ Rails.application.routes.draw do
 
   # users
   get '/users', to: 'user#index'
-  get '/user/:id', to: 'user#show'
-  post '/user', to: 'user#create'
-  patch '/user/:id', to: 'user#update'
-  delete '/user/:id', to: 'user#destroy'
+  get '/users/:id', to: 'user#show'
+  post '/users', to: 'user#create'
+  patch '/users/:id', to: 'user#update'
+  delete '/users/:id', to: 'user#destroy'
   
   # tickets
 
