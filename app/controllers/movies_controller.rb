@@ -39,6 +39,11 @@ def destroy
     render json: movie
 end
 
+def sort_movies
+   movies =  Movie.search(params[:term])
+    render json: movies
+end
+
 private
 
 def update_params
