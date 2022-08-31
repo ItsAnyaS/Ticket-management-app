@@ -6,6 +6,7 @@ import SearchPage from './SearchPage';
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import MoviePage from './MoviePage';
 import CheckoutStage1 from './CheckoutStage1'
+import AuthPage from './AuthPage'
 
 function App() {
 return (
@@ -18,6 +19,7 @@ return (
       <Route exact key={5} path='/movie' element={<MoviePage/>}/>
       <Route exact key={3} path='/checkout/1' element={<CheckoutStage1/>}/>
       <Route exact key={4} path='/checkout/2' element={<CheckoutPhaase2/>}/>
+      <Route exact key={5} path='/authenticate' element={<AuthPage/>}/>
     </Routes>
 </Router>
   </div>

@@ -45,5 +45,10 @@ Rails.application.routes.draw do
   
   # tickets
 
+  # auth
+
+  post "/auth/signup", to: "auth#sign_up"
+  post "/auth/login", to: "auth#login"
+
 end
 
