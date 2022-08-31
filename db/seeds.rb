@@ -23,23 +23,32 @@ r4 = Room.create!(room_number: 'D', capacity: 5, theater_id: t3.id, )
 r5 = Room.create!(room_number: 'E', capacity: 5, theater_id: t4.id, )
 
 
-s1 = Seat.create!(movie_id: m1.id, room_id: r1.id, available: true, is_accessible: false)
-s2 = Seat.create!(movie_id: m1.id, room_id: r1.id, available: true, is_accessible: false)
-s3 = Seat.create!(movie_id: m1.id, room_id: r1.id, available: true, is_accessible: false)
-s4 = Seat.create!(movie_id: m2.id, room_id: r2.id, available: true, is_accessible: false)
-s5 = Seat.create!(movie_id: m3.id, room_id: r3.id, available: true, is_accessible: false)
-
 st1 = Showtime.create!(movie_id: m1.id, theater_id: t1.id, start_time: 2.hours.from_now, end_time: 4.hours.from_now)
 st2 = Showtime.create!(movie_id: m2.id, theater_id: t2.id, start_time: 2.hours.from_now, end_time: 4.hours.from_now)
 st3 = Showtime.create!(movie_id: m3.id, theater_id: t3.id, start_time: 2.hours.from_now, end_time: 4.hours.from_now)
 st4 = Showtime.create!(movie_id: m4.id, theater_id: t4.id, start_time: 2.hours.from_now, end_time: 4.hours.from_now)
 st5 = Showtime.create!(movie_id: m5.id, theater_id: t5.id, start_time: 2.hours.from_now, end_time: 4.hours.from_now)
 
-# t1 = Ticket.create!(showtime_id: st1.id, user_id: nil, seat_id: s1.id, price: 20)
-# t2 = Ticket.create!(showtime_id: st2.id, user_id: nil, seat_id: s2.id, price: 20)
-# t3 = Ticket.create!(showtime_id: st2.id, user_id: nil, seat_id: s3.id, price: 20)
-# t4 = Ticket.create!(showtime_id: st2.id, user_id: nil, seat_id: s4.id, price: 20)
-# t5 = Ticket.create!(showtime_id: st3.id, user_id: nil, seat_id: s1.id, price: 20)
+
+s1 = Seat.create!(movie_id: m1.id, room_id: r1.id, showtime_id: st1.id, available: true, is_accessible: false)
+s2 = Seat.create!(movie_id: m1.id, room_id: r1.id, showtime_id: st2.id, available: true, is_accessible: false)
+s3 = Seat.create!(movie_id: m1.id, room_id: r1.id, showtime_id: st3.id, available: true, is_accessible: false)
+s4 = Seat.create!(movie_id: m2.id, room_id: r2.id, showtime_id: st4.id, available: true, is_accessible: false)
+s5 = Seat.create!(movie_id: m3.id, room_id: r3.id, showtime_id: st5.id, available: true, is_accessible: false)
+
+
+u1 = User.create!(first_name: "First", last_name: "User", email: "First_user@email.com", password: "a123")
+u2 = User.create!(first_name: "Second", last_name: "User", email: "Second_user@email.com", password: "a123")
+u3 = User.create!(first_name: "Third", last_name: "User", email: "Third_user@email.com", password: "a123")
+u4 = User.create!(first_name: "Fourth", last_name: "User", email: "Fourth_user@email.com", password: "a123")
+u5 = User.create!(first_name: "Fifth", last_name: "User", email: "Fifth_user@email.com", password: "a123")
+
+
+tk1 = Ticket.create!(showtime_id: st1.id, user_id: u1.id, seat_id: s1.id, price: 20)
+tk2 = Ticket.create!(showtime_id: st2.id, user_id: u2.id, seat_id: s2.id, price: 20)
+tk3 = Ticket.create!(showtime_id: st2.id, user_id: u3.id, seat_id: s3.id, price: 20)
+tk4 = Ticket.create!(showtime_id: st2.id, user_id: u4.id, seat_id: s4.id, price: 20)
+tk5 = Ticket.create!(showtime_id: st3.id, user_id: u5.id, seat_id: s5.id, price: 20)
 
 
 puts "Done seeding 🌱"
