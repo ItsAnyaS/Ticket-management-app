@@ -28,6 +28,9 @@ st2 = Showtime.create!(movie_id: m2.id, theater_id: t2.id, start_time: 2.hours.f
 st3 = Showtime.create!(movie_id: m3.id, theater_id: t3.id, start_time: 2.hours.from_now, end_time: 4.hours.from_now)
 st4 = Showtime.create!(movie_id: m4.id, theater_id: t4.id, start_time: 2.hours.from_now, end_time: 4.hours.from_now)
 st5 = Showtime.create!(movie_id: m5.id, theater_id: t5.id, start_time: 2.hours.from_now, end_time: 4.hours.from_now)
+st6 = Showtime.create!(movie_id: m1.id, theater_id: t1.id, start_time: 3.hours.from_now, end_time: 5.hours.from_now)
+st7 = Showtime.create!(movie_id: m1.id, theater_id: t1.id, start_time: 4.hours.from_now, end_time: 6.hours.from_now)
+st8 = Showtime.create!(movie_id: m1.id, theater_id: t1.id, start_time: 5.hours.from_now, end_time: 7.hours.from_now)
 
 
 s1 = Seat.create!(movie_id: m1.id, room_id: r1.id, showtime_id: st1.id, available: false, is_accessible: false)

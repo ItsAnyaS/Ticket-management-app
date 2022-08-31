@@ -3,7 +3,12 @@ class TheatersController < ApplicationController
 
   def index
       theater = Theater.all
-      render json: theater
+      render json: theater, include: :movies
+  end
+
+  def show
+    theater = Theater.find_by(id: params[:id])
+    render json: theater, include: :movies
   end
 
   def create
@@ -18,7 +23,8 @@ class TheatersController < ApplicationController
       else
           render json: {error: theater.errors.full_messages}, status: 422
       end
-    end
+  end
+
 
   def destroy
       theater = Theater.find_by!(id: params[:id])
