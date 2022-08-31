@@ -1,6 +1,7 @@
 import MovieCard from "./MovieCard"
 import { MovieContext } from "./App"
 import { useState, useEffect, useContext } from "react"
+import './SearchPage.css'
 const SearchPage = () => {
     const {globalMovie, setGlobalMovie} = useContext(MovieContext)
     const [searchTerm, setSearchTerm] = useState()
@@ -47,9 +48,9 @@ const SearchPage = () => {
         console.log(globalMovie)
     }
 return (
-    <div>
+    <div className="search">
         <form onSubmit={handleSubmit}>
-            <input type='text' onChange={handleChange} />
+            <input type='text' onChange={handleChange} placeholder='Find a movie...'/>
             <select onChange={handleTheaterChange}>
                 <option value ='none' defaultValue>---select a theater---</option>
                 { allTheaters.map(theater => {
@@ -62,11 +63,13 @@ return (
             <button>Search</button>
         </form>
         <h2>Movies matching your search:</h2>
+        <div className="search-movie-container" >
         {movies.map(movie => {
     return (
       <MovieCard movie={movie} />
     )
   })}
+  </div>
     </div>
 )
 }

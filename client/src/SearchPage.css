@@ -1,0 +1,59 @@
+.search{
+background-color: black;
+min-height: 92vh;
+overflow: hidden;
+
+}
+
+.search form {
+    margin-left: 60%;
+}
+
+.search form input {
+    height: 20px;
+    background-color: transparent;
+    border: none;
+    font-size: 1.3em;
+    border-bottom: 2px solid white;
+    color: white;
+}
+
+.search form input::placeholder{
+    color: white;
+}
+
+.search form select {
+    height: 21px;
+    margin-left: 10px;
+    background-color: transparent;
+    border: none;
+    font-size: 1em;
+    border-bottom: 2px solid white;
+    color: white;
+}
+
+.search form button {
+    background-color: white;
+    border: none;
+    border-radius: 30px;
+    height: 3vh;
+    width: 6vw;
+    font-size: 1em;
+    color: #E51937;
+    font-weight: 600;
+    margin-left: 1%;
+
+}
+
+.search-movie-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 2em;
+    flex-wrap: wrap;
+
+}
+
+.search-movie-container div {
+    margin: 2em;
+}
