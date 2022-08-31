@@ -1,5 +1,6 @@
 import MovieCard from './MovieCard'
 import {useState, useEffect} from 'react'
+import {NavLink} from 'react-router-dom'
 
 const Home = () => {
     const [randomMovie, setRandomMovie] = useState()
@@ -29,7 +30,7 @@ const Home = () => {
         <div className='hero'>
           <h2>{randomMovie?.title}</h2>
           <p>Short blerb about how greate the movie is and why you should spend money on it.</p>
-          <button>Get Tickets</button>
+          <NavLink to='/search'> <button>Get Tickets</button></NavLink>
         </div>
   
   <div className='now-showing'>
