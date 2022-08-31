@@ -35,11 +35,11 @@ st3 = Showtime.create!(movie_id: m3.id, theater_id: t3.id, start_time: 2.hours.f
 st4 = Showtime.create!(movie_id: m4.id, theater_id: t4.id, start_time: 2.hours.from_now, end_time: 4.hours.from_now)
 st5 = Showtime.create!(movie_id: m5.id, theater_id: t5.id, start_time: 2.hours.from_now, end_time: 4.hours.from_now)
 
-t1 = Ticket.create!(showtime_id: st1.id, seat_id: s1.id, price: 20)
-t2 = Ticket.create!(showtime_id: st2.id, seat_id: s2.id, price: 20)
-t3 = Ticket.create!(showtime_id: st2.id, seat_id: s3.id, price: 20)
-t4 = Ticket.create!(showtime_id: st2.id, seat_id: s4.id, price: 20)
-t5 = Ticket.create!(showtime_id: st3.id, seat_id: s1.id, price: 20)
+# t1 = Ticket.create!(showtime_id: st1.id, user_id: nil, seat_id: s1.id, price: 20)
+# t2 = Ticket.create!(showtime_id: st2.id, user_id: nil, seat_id: s2.id, price: 20)
+# t3 = Ticket.create!(showtime_id: st2.id, user_id: nil, seat_id: s3.id, price: 20)
+# t4 = Ticket.create!(showtime_id: st2.id, user_id: nil, seat_id: s4.id, price: 20)
+# t5 = Ticket.create!(showtime_id: st3.id, user_id: nil, seat_id: s1.id, price: 20)
 
 
 puts "Done seeding 🌱"
