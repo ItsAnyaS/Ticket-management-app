@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   patch "/theaters/:id", to: "theaters#update"
   delete "/theaters/:id", to: "theaters#destroy"
 
+  get '/theater_by_movie/:movie_id', to: 'theaters#theater_by_movie'
+
   # rooms
   get "/rooms", to: "rooms#index"
   get '/rooms/:room_id/seats', to: 'rooms#get_seats'

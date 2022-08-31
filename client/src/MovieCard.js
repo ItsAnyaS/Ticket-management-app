@@ -5,11 +5,13 @@ const MovieCard = ({movie}) => {
 
 const {globalMovie, setGlobalMovie} = useContext(MovieContext)
 const handleClick = () => {
-  setGlobalMovie(movie)
+  setGlobalMovie({
+    ...globalMovie,
+    movie: movie})
 }
   
     return (
-      <NavLink to='/' onClick={handleClick}>
+      <NavLink to='/movie' onClick={handleClick}>
         <div key={movie?.id}>
         <img/>
         <h4>{movie?.title}</h4>

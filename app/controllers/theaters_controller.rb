@@ -35,5 +35,11 @@ class TheatersController < ApplicationController
       end
   end
 
+  def theater_by_movie
+    params[:movie_id]
+    theaters = Theater.all
+    render json: theaters.to_json(methods: [:movies])
+  end
+
 
 end

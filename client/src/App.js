@@ -9,9 +9,10 @@ import MoviePage from './MoviePage';
 import CheckoutStage1 from './CheckoutStage1'
 
 export const MovieContext = createContext();
+export const TheaterContext = createContext();
 
 function App() {
-  const [globalMovie, setGlobalMovie] = useState()
+  const [globalMovie, setGlobalMovie] = useState({movie: {}, theater: ''})
   const value = useMemo(() => ({ globalMovie, setGlobalMovie }), [globalMovie, setGlobalMovie]);
 return (
   <div>
