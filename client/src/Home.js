@@ -9,7 +9,6 @@ const Home = () => {
     const getRandomMovie = async() => {
       let req = await fetch('http://localhost:3000/random_movie')
       let res = await req.json()
-      console.log(res)
       setRandomMovie(res)
     }
     getRandomMovie()
@@ -18,7 +17,6 @@ const Home = () => {
       let req = await fetch('http://localhost:3000/random_movies_5')
       let res = await req.json()
       setMovies(res)
-      console.log(res)
     }
   
     getMovies()
