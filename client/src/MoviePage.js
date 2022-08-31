@@ -7,7 +7,7 @@ const MoviePage = () => {
 
     useEffect(()=> {
         const getMovie = async () => {
-        let req = await fetch(`http://localhost:3000/movie/1`)
+        let req = await fetch(`http://localhost:3000/movies/1`)
         let res = await req.json()
         setMovie(res)
         console.log(res)
