@@ -9,9 +9,11 @@ Rails.application.routes.draw do
 
   # rooms
   get "/rooms", to: "rooms#index"
+  get "rooms/:id/seats/:seat_id/tickets/:ticket_id", to: "rooms#get_ticket"
   post "/rooms", to: "rooms#create"
   patch "/rooms/:id", to: "rooms#update"
   delete "/rooms/:id", to: "rooms#destroy"
+  
 
   # movies
   get '/movies', to: 'movies#index'
