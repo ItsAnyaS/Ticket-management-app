@@ -27,5 +27,12 @@ Rails.application.routes.draw do
   post '/showtimes', to: 'showtimes#create'
   patch '/showtimes/:id', to: 'showtimes#update'
   delete '/showtimes/:id', to: 'showtimes#destroy'
+
+  # seats
+
+  # users
+
+  # tickets
+
 end
 
