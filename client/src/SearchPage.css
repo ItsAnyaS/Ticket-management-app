@@ -57,3 +57,7 @@ overflow: hidden;
 .search-movie-container div {
     margin: 2em;
 }
+
+option {
+    background-color: black;
+}
