@@ -59,16 +59,18 @@ let newTheater = ''
                 {/* change src to `{movie.image}`` */}
                 <img id='banner-image' src="./topgun.jpeg" alt="Movie poster"/>
             </div>
-           <NavLink to='/checkout/1'> <button >Get Tickets</button></NavLink>
-            <div key={movie.id}>
+            <div className='movie-floating-info' key={movie.id}>
                 <h4>{movie.title}</h4>
-                <p>{movie.runtime}</p>
-                <p>{movie.rating}</p>
+              
+           <NavLink to='/checkout/1'> <button className='red-btn btn-hover' >Get Tickets</button></NavLink>
+            </div>
+            <div className='flex-div'>
+                <div>
+                <p>{movie.runtime} | {movie.rating} | HD </p>
                 <p>{readable_date}</p>
                 <p>{movie.genre}</p>
-            </div>
-            <div>
-                <p>{movie.description}</p>
+                </div>
+                <p className='desc'>{movie.description}</p>
             </div>
         </div>
     )

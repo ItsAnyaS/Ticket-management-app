@@ -1,6 +1,7 @@
 .movie-page {
     background-color: black;
     min-height: 92vh;
+    position: relative;
 }
 
 #banner-image {
@@ -9,3 +10,34 @@
     object-fit: cover;
     object-position: 0% 65%;
 }
+
+.movie-floating-info {
+    position: absolute;
+    top: 15%;
+    left: 5%;
+}
+
+.movie-floating-info h4 {
+    font-size: 4em;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.flex-div {
+    color: white;
+    display: flex;
+    justify-content: center;
+    gap: 10%;
+    padding-top: 1em;
+}
+
+.flex-div p{
+font-size: 1.4em;
+}
+
+
+.desc {
+    max-width: 40%;
+    line-height: 35px;
+}
+

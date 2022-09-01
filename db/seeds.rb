@@ -2,7 +2,7 @@
 puts "Starting to seed"
 
 
-m1 = Movie.create!(title: "Top Gun", description: "This is a movie with Tom Cruz and fast planes", rating: 'PG-13', runtime: '90 minutes', release_date: '20220819', genre: 'Action')
+m1 = Movie.create!(title: "Top Gun", description: "After more than thirty years of service as one of the Navy's top aviators, Pete 'Maverick' Mitchell (Tom Cruise) is where he belongs, pushing the envelope as a courageous test pilot and dodging the advancement in rank that would ground him. When he finds himself training a detachment of Top Gun graduates for a specialized mission the likes of which no living pilot has ever seen, Maverick encounters Lt. Bradley Bradshaw (Miles Teller), call sign: 'Rooster,' the son of Maverick's late friend and Radar Intercept Officer Lt. Nick Bradshaw, aka 'Goose'. Facing an uncertain future and confronting the ghosts of his past, Maverick is drawn into a confrontation with his own deepest fears, culminating in a mission that demands the ultimate sacrifice from those who will be chosen to fly it.", rating: 'PG-13', runtime: '90 minutes', release_date: '20220819', genre: 'Action')
 m2 = Movie.create!(title: "Spiderman: No way home", description: "This is a movie with Tom Holland and Zendaya", rating: 'PG-13', runtime: '95 minutes', release_date: '20220819', genre: 'Action')
 m3 = Movie.create!(title: "DC league of super pets", description: "This is a movie with annimated pets trying to save superman", rating: 'PG', runtime: '76 minutes', release_date: '20220820', genre: 'Family')
 m4 = Movie.create!(title: "Barbarian", description: "This is a movie about sometihing", rating: 'R', runtime: '104 minutes', release_date: '20210820', genre: 'Horror')

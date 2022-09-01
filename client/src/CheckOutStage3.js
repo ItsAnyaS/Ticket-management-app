@@ -31,15 +31,15 @@ const CheckoutStage3 = (props) => {
             <h2>Checkout Stage 3</h2>
             <div className='checkoutTicket'>
                 {/* change src to `{movie.image}`` */}
-                <img className='checkoutImage' src="./topgun.jpeg" alt="Movie poster" width="100" height="100"/>
+                <img className='checkoutImage' src="topgun.jpeg" alt="Movie poster" width="100" height="100"/>
                 <button onClick={() => handleClickAuth()}>Sign in to check out </button>
                 <button onClick={() => handleCheckout()}>Check out</button>
                 <div>
-                    <h2>Theater name: {theater.name}</h2>
-                    <h3>Movie title: {movie.title}</h3>
-                    <h4>Showtime start date: {showtime.start_time}</h4>
-                    <h4>Room ID: {seat.room_id}</h4>
-                    <h4>Seat ID: {seat.id}</h4>
+                    <h2>Theater name: {theater?.name}</h2>
+                    <h3>Movie title: {movie?.title}</h3>
+                    <h4>Showtime start date: {showtime?.start_time}</h4>
+                    <h4>Room ID: {seat?.room_id}</h4>
+                    <h4>Seat ID: {seat?.id}</h4>
                 </div>
             </div>
         </div>
