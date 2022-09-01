@@ -43,4 +43,22 @@ class TicketsController < ApplicationController
             render json: [{message: "Couldn't verify user", params: params}]
         end
     end
+    
+    def add_ticket_to_user
+        token = params[:user_id]
+        if token
+            decoded_token = JWT.decode token, nil, false
+            user = User.find_by(email: decoded_token[0]["data"])
+            ticket = Ticket.find_by!(showtime_id: params[:showtime_id])
+            if ticket
+                ticket.update(user_id: user.id)
+                render json: {message: "Ticket added successfully"}
+            else
+            end
+        else
+            render json: [{message: "Couldn't verify SOMETHING", params: params}]
+        end
+    end
+
+
 end

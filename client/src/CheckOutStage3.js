@@ -24,17 +24,18 @@ const CheckoutStage3 = (props) => {
 
     console.log(globalMovie)
 
-    const handleCheckout = () => {
-        fetch('http://localhost:3000/change_ticket', {
+    const handleCheckout = async () => {
+        const user_id = document.cookie.split('=')[1]
+        let req = fetch('http://localhost:3000/tickets/add', {
             method: 'PATCH',
             headers: {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify({
                 showtime_id: showtime.id,
-                user_id: 1
-            })
-})
+                user_id: user_id
+            }),
+        })
     }
 
     return ( 
@@ -46,7 +47,7 @@ const CheckoutStage3 = (props) => {
             <div className='checkoutTicket'>
             <h2 className='ch3-cta'>Sign In or Join Now</h2>
             {isLoggedIn ? <button className='signin-checkout-btn' onClick={() => handleCheckout()}>Check out</button> 
-        :   <NavLink to='/login'><button className='signin-checkout-btn' onClick={() => handleClickAuth()}>Sign in to check out </button></NavLink>} 
+        :   <NavLink to='/authenticate'><button className='signin-checkout-btn' onClick={() => handleClickAuth()}>Sign in to check out </button></NavLink>} 
           
             </div>
 
