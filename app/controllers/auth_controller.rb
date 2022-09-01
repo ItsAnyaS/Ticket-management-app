@@ -5,7 +5,7 @@ class AuthController < ApplicationController
 
     def login
         hmac_secret = 'my$ecretK3y'
-        user = User.find_by!(email: params[:email])
+        user = User.find_by!(email: params[:email].downcase)
         token = user["password"]
         payload = {data: user["email"]}
         if token == params[:password]
@@ -18,8 +18,8 @@ class AuthController < ApplicationController
 
     def sign_up
             hmac_secret = 'my$ecretK3y'
-            User.create!(first_name: params[:first_name], last_name: params[:last_name], email: params[:email], password: params[:password]) 
-            user = User.find_by!(email: params[:email])
+            user1 = User.create!(first_name: params[:first_name], last_name: params[:last_name], email: params[:email].downcase, password: params[:password]) 
+            user = User.find_by!(email: user1.email)
             if user 
             payload = {data: user["username"]}
             hashed_user = JWT.encode payload, hmac_secret, 'HS256'

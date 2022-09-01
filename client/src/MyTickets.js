@@ -1,4 +1,6 @@
 import { useState, useEffect } from 'react'
+import { NavLink } from 'react-router-dom'
+import './MyTickets.css'
 
 const MyTickets = () => {
 
@@ -24,22 +26,27 @@ const MyTickets = () => {
 
     return (
         <div className="my-tickets">
-            {userTickets.map((ticket) => {
-                const { id, seat_id, price } = ticket
-                const { start_time, movie } = ticket.showtime
-                const { title } = ticket.showtime.movie
-                    return (
-                        <div className='ticket-card'>
-                            <p>{title}</p>
-                            <p>{start_time}</p>
-                            <p>Seat No. {seat_id}</p>
-                            <p>${price}</p>
-                        </div>
-                    )
-            })}
+            {userTickets.length > 0 
+            ?
+                userTickets.map((ticket) => {
+                    const { id, seat_id, price } = ticket
+                    const { start_time, movie } = ticket.showtime
+                    const { title } = ticket.showtime.movie
+                        return (
+                            <div className='ticket-card'>
+                                <p>{title}</p>
+                                <p>{start_time}</p>
+                                <p>Seat No. {seat_id}</p>
+                                <p>${price}</p>
+                            </div>
+                        )
+                })
+                : <div className='ticketless'><NavLink to='/search'><button className='buy-product'>You have no tickets. CLICK HERE</button></NavLink></div>
+        }
             {/* <div className="upcoming-tickets">
                 <h3 className="large-text">Upcoming</h3>
                 <div className='tickets-container'>
+                <NavLink to='/search'> <button className="nav-cta">Get Tickets</button></NavLink>
 
                 </div>
             </div>
