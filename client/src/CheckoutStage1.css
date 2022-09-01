@@ -1,0 +1,59 @@
+.showtime-btn {
+height: 4em;
+background-color: transparent;
+font-size: 1vw;
+border-radius: 50px;
+padding: 20px;
+border: 1px solid white;
+color: white;
+
+}
+
+.showtime-button {
+    height: 2em;
+}
+
+.showtime-btn:hover{
+    transform: scale(1.1);
+    transition: 100ms;
+}
+
+.checkout-stage-1 {
+    background-color: black;
+    height: 94.2vh;
+    margin-top: -1.4em;
+    filter: blur(2.5%);
+    color: white;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.checkout-stage-1-content {
+z-index: 10;
+margin-top: 2em;
+position: absolute;
+top: 10%;
+left: 5%;
+z-index: 10;
+font-size: 2em;
+}
+
+.checkout-stage-1-content h1 {
+    margin-bottom: 0;
+}
+
+.checkout-stage-1-header {
+    text-align: center;
+    font-size: 1.6em;
+}
+
+
+.img {
+width: 110%;
+height: 92.1vh;
+filter: blur(1.5rem);
+margin-left: -1em;
+}

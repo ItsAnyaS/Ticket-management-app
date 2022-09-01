@@ -28,22 +28,32 @@ st2 = Showtime.create!(movie_id: m2.id, theater_id: t2.id, start_time: 2.hours.f
 st3 = Showtime.create!(movie_id: m3.id, theater_id: t3.id, start_time: 2.hours.from_now, end_time: 4.hours.from_now)
 st4 = Showtime.create!(movie_id: m4.id, theater_id: t4.id, start_time: 2.hours.from_now, end_time: 4.hours.from_now)
 st5 = Showtime.create!(movie_id: m5.id, theater_id: t5.id, start_time: 2.hours.from_now, end_time: 4.hours.from_now)
-st6 = Showtime.create!(movie_id: m1.id, theater_id: t1.id, start_time: 3.hours.from_now, end_time: 5.hours.from_now)
-st7 = Showtime.create!(movie_id: m1.id, theater_id: t1.id, start_time: 4.hours.from_now, end_time: 6.hours.from_now)
-st8 = Showtime.create!(movie_id: m1.id, theater_id: t1.id, start_time: 5.hours.from_now, end_time: 7.hours.from_now)
 
 
 s1 = Seat.create!(movie_id: m1.id, room_id: r1.id, showtime_id: st1.id, available: false, is_accessible: false)
-s2 = Seat.create!(movie_id: m1.id, room_id: r1.id, showtime_id: st2.id, available: true, is_accessible: false)
-s3 = Seat.create!(movie_id: m1.id, room_id: r1.id, showtime_id: st3.id, available: true, is_accessible: false)
-s4 = Seat.create!(movie_id: m1.id, room_id: r1.id, showtime_id: st4.id, available: true, is_accessible: false)
-s5 = Seat.create!(movie_id: m1.id, room_id: r1.id, showtime_id: st5.id, available: true, is_accessible: false)
+s2 = Seat.create!(movie_id: m1.id, room_id: r1.id, showtime_id: st1.id, available: true, is_accessible: false)
+s3 = Seat.create!(movie_id: m1.id, room_id: r1.id, showtime_id: st1.id, available: true, is_accessible: false)
+s4 = Seat.create!(movie_id: m1.id, room_id: r1.id, showtime_id: st1.id, available: true, is_accessible: false)
+s5 = Seat.create!(movie_id: m1.id, room_id: r1.id, showtime_id: st1.id, available: true, is_accessible: false)
 
-s6= Seat.create!(movie_id: m2.id, room_id: r2.id, showtime_id: st1.id, available: false, is_accessible: false)
+s6 = Seat.create!(movie_id: m2.id, room_id: r2.id, showtime_id: st2.id, available: false, is_accessible: false)
 s7 = Seat.create!(movie_id: m2.id, room_id: r2.id, showtime_id: st2.id, available: true, is_accessible: false)
-s8 = Seat.create!(movie_id: m2.id, room_id: r2.id, showtime_id: st3.id, available: true, is_accessible: false)
-s9 = Seat.create!(movie_id: m2.id, room_id: r2.id, showtime_id: st4.id, available: true, is_accessible: false)
-s10 = Seat.create!(movie_id: m2.id, room_id: r2.id, showtime_id: st5.id, available: true, is_accessible: false)
+s8 = Seat.create!(movie_id: m2.id, room_id: r2.id, showtime_id: st2.id, available: true, is_accessible: false)
+s9 = Seat.create!(movie_id: m2.id, room_id: r2.id, showtime_id: st2.id, available: true, is_accessible: false)
+s10 = Seat.create!(movie_id: m2.id, room_id: r2.id, showtime_id: st2.id, available: true, is_accessible: false)
+
+s11 = Seat.create!(movie_id: m3.id, room_id: r3.id, showtime_id: st3.id, available: false, is_accessible: false)
+s12 = Seat.create!(movie_id: m3.id, room_id: r3.id, showtime_id: st3.id, available: true, is_accessible: false)
+s13 = Seat.create!(movie_id: m3.id, room_id: r3.id, showtime_id: st3.id, available: true, is_accessible: false)
+s14 = Seat.create!(movie_id: m3.id, room_id: r3.id, showtime_id: st3.id, available: true, is_accessible: false)
+s15 = Seat.create!(movie_id: m3.id, room_id: r3.id, showtime_id: st3.id, available: true, is_accessible: false)
+
+
+s16 = Seat.create!(movie_id: m4.id, room_id: r4.id, showtime_id: st4.id, available: false, is_accessible: false)
+s17 = Seat.create!(movie_id: m4.id, room_id: r4.id, showtime_id: st4.id, available: true, is_accessible: false)
+s18 = Seat.create!(movie_id: m4.id, room_id: r4.id, showtime_id: st4.id, available: true, is_accessible: false)
+s19 = Seat.create!(movie_id: m4.id, room_id: r4.id, showtime_id: st4.id, available: true, is_accessible: false)
+s20 = Seat.create!(movie_id: m4.id, room_id: r4.id, showtime_id: st4.id, available: true, is_accessible: false)
 
 
 u1 = User.create!(first_name: "First", last_name: "User", email: "First_user@email.com", password: "a123")
