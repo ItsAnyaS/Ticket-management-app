@@ -16,7 +16,7 @@ const Navbar = ({ setLoggedIn, loggedIn }) => {
 ======= */}
       <div>Logo</div>
       <NavLink to='/search'> <button className="nav-cta">Get Tickets</button></NavLink>
-      <NavLink to='/my_tickets'> <button className="login">My Tickets</button></NavLink>
+      <NavLink to={loggedIn ? '/my_tickets' : '/authenticate'}> <button className="login">My Tickets</button></NavLink>
       { loggedIn
         ?
         <button className="login" onClick={handleSignOut}>Sign Out</button>
