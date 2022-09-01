@@ -1,0 +1,74 @@
+.auth-page {
+    width: 100%;
+    height: 92vh;
+    justify-content: center;
+    display: flex;
+    background-image: url('../public/pexels-photo-time-lapse-exterior.jpg');
+    background-size: cover;
+    color: white;
+}
+
+.login-container {
+    width: 90%;
+    height: 90vh;
+    background: linear-gradient(112.1deg, rgb(33, 33, 33, 0.3) 11.4%, rgba(36, 36, 36, 0) 70.2%);
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+}
+
+.login-fields-holder {
+    margin-top: 8%;
+    width: 30%;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-signup-fields {
+    height: 300px;
+}
+
+.signup-body {
+    width: 100%;
+    height: 100%;
+}
+
+.login-body {
+    width: 100%;
+    height: 100%;
+}
+
+
+.login-button {
+    border-radius: 10px;
+    margin-right: 15px;
+    height: 32px;
+    width: 80px;
+    font-size: 1em;
+    background-color: #E51937;
+    color: white;
+    font-weight: 600;
+    border: none;  
+}
+
+.login-input {
+    border-radius: 10px;
+    border: none;
+    width: 80%;
+    margin: 2% 10%;
+    height: 32px;
+}
+
+.login-submit-button {
+    border-radius: 10px;
+    margin-right: 15px;
+    margin-top: 20px;
+    height: 32px;
+    width: 150px;
+    font-size: 1em;
+    background-color: #E51937;
+    color: white;
+    font-weight: 600;
+    border: none;
+    bottom: 0;
+}
