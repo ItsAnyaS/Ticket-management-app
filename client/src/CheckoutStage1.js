@@ -48,7 +48,7 @@ const CheckoutStage1 = () => {
                         {showtimes.map((showtime) => {
                             const {id, movie_id, theater_id, start_time, end_time} = showtime
                             return (
-                                <NavLink to={`/checkout/2`} onClick={()=> {setGlobalMovie({...globalMovie, showtime_id: showtime.id})}}>
+                                <NavLink to={`/checkout/2`} onClick={()=> {setGlobalMovie({...globalMovie, showtime: showtime})}}>
                                 <ShowtimeButton 
                                     key={id}
                                     id={id} 

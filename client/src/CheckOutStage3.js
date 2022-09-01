@@ -1,15 +1,28 @@
 import { useState, useEffect, useContext } from 'react'
 import { MovieContext } from "./App"
+import { NavLink } from 'react-router-dom';
+
+import './CheckoutStage3.css'
 
 const CheckoutStage3 = (props) => {
     const {globalMovie, setGlobalMovie} = useContext(MovieContext)
     const [ticketAttributes, setTicketAttributes] = useState({})
     const {seat, movie, showtime, theater} = globalMovie;
+    const [isLoggedIn, setIsLoggedIn] = useState(false)
+
 
     const handleClickAuth = (e) => {
-    //   navigate("../AuthPage", { replace: true });
-        console.log("Routing to ...")
+    //   Navigate("../AuthPage", { replace: true })
     }
+
+    useEffect(() => {
+        if (document.cookie != ''){
+            setIsLoggedIn(true)
+        }
+
+    }, [])
+
+    console.log(globalMovie)
 
     const handleCheckout = () => {
         fetch('http://localhost:3000/tickets', {
@@ -19,7 +32,7 @@ const CheckoutStage3 = (props) => {
             },
             body: JSON.stringify({
                 price: 10,
-                showtime_id: showtime.id,
+                showtime_id: showtime,
                 seat_id: seat.id,
                 user_id: 1
             }),
@@ -27,20 +40,26 @@ const CheckoutStage3 = (props) => {
     }
 
     return ( 
-        <div>
-            <h2>Checkout Stage 3</h2>
+        <div className='checkout-phase-3-content'>
+            <hr/>
+            <h2 className='header'>Location: {theater?.name}</h2>
+            <hr/>
+            <div className='checkout-container'>
             <div className='checkoutTicket'>
-                {/* change src to `{movie.image}`` */}
-                <img className='checkoutImage' src="topgun.jpeg" alt="Movie poster" width="100" height="100"/>
-                <button onClick={() => handleClickAuth()}>Sign in to check out </button>
-                <button onClick={() => handleCheckout()}>Check out</button>
-                <div>
-                    <h2>Theater name: {theater?.name}</h2>
-                    <h3>Movie title: {movie?.title}</h3>
-                    <h4>Showtime start date: {showtime?.start_time}</h4>
-                    <h4>Room ID: {seat?.room_id}</h4>
-                    <h4>Seat ID: {seat?.id}</h4>
-                </div>
+            <h2 className='ch3-cta'>Sign In or Join Now</h2>
+            {isLoggedIn ? <button className='signin-checkout-btn' onClick={() => handleCheckout()}>Check out</button> 
+        :   <NavLink to='/authenticate'><button className='signin-checkout-btn' onClick={() => handleClickAuth()}>Sign in to check out </button></NavLink>} 
+          
+            </div>
+
+            <div className='movie-details'>
+                <h3 className='ticket-h3'>Ticket:</h3>
+                <hr/>
+                <p>{movie?.title}</p>
+                <p>Showtime: {new Date(showtime?.start_time).toLocaleDateString('en-us', { weekday:"long", year:"numeric", month:"short", day:"numeric"})}</p>
+                <p>Theater: {seat?.room_id}</p>
+                <p>Seat number: {seat?.id}</p>
+            </div>
             </div>
         </div>
     )

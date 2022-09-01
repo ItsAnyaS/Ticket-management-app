@@ -1,0 +1,54 @@
+.checkout-phase-3-content {
+    color: white;
+    background-color: black;
+    min-height: 90vh;
+    margin-top: -20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+}
+
+hr {
+    width: 100%;
+}
+
+.checkout-container {
+display: flex;
+justify-content: center;
+margin-top: 2em;
+gap: 20%;
+
+}
+
+.ticket-h3 {
+font-size: 3em;
+margin-bottom: 0;
+}
+
+.ch3-cta {
+    font-size: 3em;
+    width: 500px;
+}
+
+
+.signin-checkout-btn {
+    height: 5vh;
+    border-radius: 30px;
+    border: none;
+    background-color: #E51937;
+    color: white;
+    font-size: 1.3em;
+    font-weight: 600;
+    padding: 0 15px;
+}
+
+.signin-checkout-btn:hover {
+    transform: scale(1.1);
+    transition: 100ms;
+}
+
+.movie-details {
+    min-width: 200px;
+    font-size: 1.1em;
+}

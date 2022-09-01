@@ -16,6 +16,8 @@ color: white;
 .showtime-btn:hover{
     transform: scale(1.1);
     transition: 100ms;
+    color: #0984e3;
+    border-color: #0984e3;
 }
 
 .checkout-stage-1 {
