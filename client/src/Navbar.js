@@ -1,4 +1,5 @@
 import { NavLink } from "react-router-dom"
+import './App.css'
 const Navbar = () => {
   return (
     <nav>
@@ -10,10 +11,9 @@ const Navbar = () => {
 )
 ======= */}
       <div>Logo</div>
-      <NavLink to='/search'> <button>Get Tickets</button></NavLink>
-      <input type='text' placeholder='search'/>
-      <NavLink to='/my_tickets'> <button>My Tickets</button></NavLink>
-      <NavLink to='/authenticate'> <button>Log In</button></NavLink>
+      <NavLink to='/search'> <button className="nav-cta">Get Tickets</button></NavLink>
+      <NavLink to='/my_tickets'> <button className="login">My Tickets</button></NavLink>
+      <NavLink to='/authenticate'> <button className="login">Log In</button></NavLink>
     </nav>
   )
 }

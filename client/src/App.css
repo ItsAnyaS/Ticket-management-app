@@ -43,7 +43,7 @@ nav input {
 
   .nav-cta:hover {
     transform: scale(1.1);
-    transition: 100s;
+    transition: 100ms;
   }
 
 .movie-container {
@@ -66,5 +66,5 @@ nav input {
 
 .login:hover {
   transform: scale(1.1);
-  transition: 100s;
+  transition: 100ms;
 }
