@@ -6,6 +6,7 @@ import './MyTickets.css'
 const MyTickets = () => {
 
     const [userTickets, setUserTickets] = useState([])
+    const [loaded, setLoaded] = useState(false)
 
     useEffect(() => {
         const test = async () => {
@@ -21,13 +22,14 @@ const MyTickets = () => {
             let res = await req.json()
             console.log('my tickets', res)
             setUserTickets(res)
+            setLoaded(true)
         }
         test()
     },[])
 
     return (
         <div className="my-tickets">
-            {userTickets.length > 0 
+            {loaded && userTickets.length > 0 
             ?
                 userTickets.map((ticket) => {
                     const { id, seat_id, price } = ticket
@@ -42,7 +44,7 @@ const MyTickets = () => {
                             />
                         )
                 })
-                : <div className='ticketless'><NavLink to='/search'><button className='buy-product'>You have no tickets. CLICK HERE</button></NavLink></div>
+                : loaded ? <div className='ticketless'><NavLink to='/search'><button className='buy-product'>You have no tickets. CLICK HERE</button></NavLink></div> : <></>
         }
             {/* <div className="upcoming-tickets">
                 <h3 className="large-text">Upcoming</h3>
