@@ -17,11 +17,13 @@ export const TheaterContext = createContext();
 function App() {
   const [globalMovie, setGlobalMovie] = useState({movie: {}, theater: '', showtime_id: ''})
   const value = useMemo(() => ({ globalMovie, setGlobalMovie }), [globalMovie, setGlobalMovie]);
+  const [loggedIn, setLoggedIn] = useState((document.cookie == 'hash=' || document.cookie == '') ? false : true)
+
 return (
   <div>
     <MovieContext.Provider value={value}>
     <Router>
-    <Navbar/>
+    <Navbar setLoggedIn={setLoggedIn} loggedIn={loggedIn} />
     <Routes>
       <Route exact key={1} path='/' element={<Home />}/>
       <Route exact key={2} path='/search' element={<SearchPage/>}/>
@@ -29,7 +31,7 @@ return (
       <Route exact key={4} path='/checkout/1' element={<CheckoutStage1/>}/>
       <Route exact key={5} path='/checkout/2' element={<CheckoutPhaase2/>}/>
       <Route exact key={6} path='/checkout/3' element={<CheckOutStage3/>}/>
-      <Route exact key={7} path='/authenticate' element={<AuthPage/>}/>
+      <Route exact key={7} path='/authenticate' element={<AuthPage setLoggedIn={setLoggedIn} />}/>
       <Route exact key={8} path='/my_tickets' element={<MyTickets />}/>
     </Routes>
     </Router>

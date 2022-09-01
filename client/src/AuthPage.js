@@ -2,7 +2,7 @@ import { useState } from 'react'
 import Login from './Login'
 import SignUp from './SignUp'
 
-const AuthPage = () => {
+const AuthPage = ({ setLoggedIn }) => {
     const [showLogin, setShowLogin] = useState(true)
 
     const handleClickLogin = () => {
@@ -23,9 +23,9 @@ const AuthPage = () => {
                 </div>
                 <div className='login-signup-fields'>
                     {showLogin ?
-                        <Login />
+                        <Login setLoggedIn={setLoggedIn}/>
                     :
-                        <SignUp />
+                        <SignUp setLoggedIn={setLoggedIn}/>
                     }
                 </div>
             </div>

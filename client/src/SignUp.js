@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
-const SignUp = () => {
+const SignUp = ({ setLoggedIn }) => {
     const [inputs, setInputs] = 
     useState({
         first_name: '',
@@ -35,9 +35,10 @@ const SignUp = () => {
             let tomorrow = new Date(new Date().getTime() + (24 * 60 * 60 * 1000));
             document.cookie = `hash=${res.hashed_user}; expires=` + tomorrow.toUTCString()
             console.log('cookie', document.cookie)
+            setLoggedIn(true)
             navigate('/')
         } else {
-            document.cookie=''
+            document.cookie = 'hash='
             alert('failed')
         }
     }

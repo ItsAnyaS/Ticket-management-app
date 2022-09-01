@@ -1,6 +1,10 @@
 import { NavLink } from "react-router-dom"
 import './App.css'
-const Navbar = () => {
+const Navbar = ({ setLoggedIn, loggedIn }) => {
+  const handleSignOut = () => {
+    document.cookie = 'hash='
+    setLoggedIn(false)
+  }
   return (
     <nav>
 {/* <<<<<<< HEAD
@@ -13,7 +17,13 @@ const Navbar = () => {
       <div>Logo</div>
       <NavLink to='/search'> <button className="nav-cta">Get Tickets</button></NavLink>
       <NavLink to='/my_tickets'> <button className="login">My Tickets</button></NavLink>
-      <NavLink to='/authenticate'> <button className="login">Log In</button></NavLink>
+      { loggedIn
+        ?
+        <button className="login" onClick={handleSignOut}>Sign Out</button>
+        :
+        <NavLink to='/authenticate'> <button className="login">Log In</button></NavLink>
+      }
+        
     </nav>
   )
 }
