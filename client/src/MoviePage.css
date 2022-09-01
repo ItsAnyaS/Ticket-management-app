@@ -1,0 +1,11 @@
+.movie-page {
+    background-color: black;
+    min-height: 92vh;
+}
+
+#banner-image {
+    width: 100%;
+    height: 40vh;
+    object-fit: cover;
+    object-position: 0% 65%;
+}
