@@ -8,3 +8,22 @@
     height: auto;
 
 }
+
+.my-tickets {
+    width: 100%;
+    height: 90vh;
+    background-color: black;
+    margin-top: -20px;
+    color: white;
+}
+
+.ticket-card {
+    border-bottom: .01em solid rgb(255, 255, 255);
+    color: white;
+    margin-top: 10px;
+}
+
+.title-font {
+    font-weight: 600;
+    font-size: larger;
+}

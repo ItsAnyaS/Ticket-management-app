@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { NavLink } from 'react-router-dom'
+import TicketCard from './TicketCard'
 import './MyTickets.css'
 
 const MyTickets = () => {
@@ -33,12 +34,12 @@ const MyTickets = () => {
                     const { start_time, movie } = ticket.showtime
                     const { title } = ticket.showtime.movie
                         return (
-                            <div className='ticket-card'>
-                                <p>{title}</p>
-                                <p>{start_time}</p>
-                                <p>Seat No. {seat_id}</p>
-                                <p>${price}</p>
-                            </div>
+                            <TicketCard 
+                                seat_id={seat_id}
+                                price={price}
+                                start_time={start_time}
+                                title={title}
+                            />
                         )
                 })
                 : <div className='ticketless'><NavLink to='/search'><button className='buy-product'>You have no tickets. CLICK HERE</button></NavLink></div>
