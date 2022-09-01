@@ -49,6 +49,7 @@ Rails.application.routes.draw do
   # tickets
   post '/tickets', to: 'tickets#create'
   post '/tickets/user', to: 'tickets#tickets_by_user'
+  patch '/tickets/add', to: 'tickets#add_ticket_to_user'
 
   get '/tickets', to: 'tickets#index'
   get '/tickets/:id', to: 'tickets#show'

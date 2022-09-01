@@ -24,19 +24,18 @@ const CheckoutStage3 = (props) => {
 
     console.log(globalMovie)
 
-    const handleCheckout = () => {
-        fetch('http://localhost:3000/tickets', {
-            method: 'POST',
+    const handleCheckout = async () => {
+        const user_id = document.cookie.split('=')[1]
+        let req = fetch('http://localhost:3000/tickets/add', {
+            method: 'PATCH',
             headers: {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify({
-                price: 10,
                 showtime_id: showtime,
-                seat_id: seat.id,
-                user_id: 1
+                user_id: user_id
             }),
-})
+        })
     }
 
     return ( 
