@@ -84,6 +84,7 @@ console.log(globalMovie)
                                     theaterId={theater_id} 
                                     startTime={start_time} 
                                     endTime={end_time}
+                                    showtime={showtime}
                                 />
                                 </NavLink>
                             )
