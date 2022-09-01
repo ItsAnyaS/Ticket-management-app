@@ -6,7 +6,7 @@
 nav {
   display: flex;
   gap: 20px;
-  height: 8vh;
+  height: 12vh;
   background-color: black;
   z-index: 100;
   align-items: center;
@@ -21,9 +21,9 @@ nav input {
     background-color: #E51937;
     border: none;
     border-radius: 30px;
-    height: 5vh;
+    height: 2.2vw;
     width: 8vw;
-    font-size: 1.4em;
+    font-size: 1vw;
     color: white;
     font-weight: 600;
     

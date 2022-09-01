@@ -30,7 +30,8 @@ const handleSeatSelection = (seat) => {
 
 return (
     <div className="seat-selection">
-        <h2>Please Select a seat</h2>
+        <div className="screen"></div>
+        <h2>SCREEN</h2>
         <div className="seat-selection-container">
 
             {seats.map(seat => {
@@ -40,9 +41,9 @@ return (
                         {
                             seat.available ? (
                                 <NavLink to='/checkout/3'>
-                                    <button value={seat?.id} onClick={() => { handleSeatSelection(seat) }} >{seat?.id}</button> 
+                                    <button className="seat-btn" value={seat?.id} onClick={() => { handleSeatSelection(seat) }} >{seat?.id}</button> 
                                 </NavLink> 
-                            ) : <div>X</div>                           
+                            ) : "X"
                         }
                     </div>
                 )
