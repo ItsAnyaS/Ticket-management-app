@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import './AuthPage.css'
 
 const Login = ({ setLoggedIn }) => {
     const [inputs, setInputs] = useState({email: '', password: ''})
@@ -38,11 +39,14 @@ const Login = ({ setLoggedIn }) => {
 
     return (
         <div className='login-body'>
-            <h3>Log In</h3>
+            <h3> &nbsp; &nbsp; &nbsp; Log In</h3>
             <form onSubmit={handleSubmit}>
-                <input type='email' placeholder='moviefan@website.com' name='email' value={inputs.email} onChange={handleChange}/>
-                <input type='password' placeholder='password' name='password' value={inputs.password} onChange={handleChange}/>
-                <button type='submit'>Log In</button>
+                <div className='input-divider'>
+                    <input className='login-input' type='email' placeholder='moviefan@website.com' name='email' value={inputs.email} onChange={handleChange}/>
+                </div>
+                
+                <input className='login-input' type='password' placeholder='password' name='password' value={inputs.password} onChange={handleChange}/>
+                <button className='login-submit-button' type='submit'>Get Started!</button>
             </form>
         </div>
     )

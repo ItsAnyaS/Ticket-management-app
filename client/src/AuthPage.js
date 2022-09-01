@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import Login from './Login'
 import SignUp from './SignUp'
+import './AuthPage.css'
 
 const AuthPage = ({ setLoggedIn }) => {
     const [showLogin, setShowLogin] = useState(true)
@@ -15,21 +16,21 @@ const AuthPage = ({ setLoggedIn }) => {
 
     return (
         <div className='auth-page'>
-            <hr />
             <div className='login-container'>
-                <div className='tab-container'>
-                    <button onClick={handleClickLogin}>Log In</button>
-                    <button onClick={handleClickSignup}>Sign Up</button>
-                </div>
-                <div className='login-signup-fields'>
-                    {showLogin ?
-                        <Login setLoggedIn={setLoggedIn}/>
-                    :
-                        <SignUp setLoggedIn={setLoggedIn}/>
-                    }
+                <div className='login-fields-holder'>
+                    <div className='tab-container'>
+                        <button className='login-button' onClick={handleClickLogin}>Log In</button>
+                        <button className='login-button' onClick={handleClickSignup}>Sign Up</button>
+                    </div>
+                    <div className='login-signup-fields'>
+                        {showLogin ?
+                            <Login setLoggedIn={setLoggedIn}/>
+                        :
+                            <SignUp setLoggedIn={setLoggedIn}/>
+                        }
+                    </div>
                 </div>
             </div>
-            <hr />
         </div>
     )
 }

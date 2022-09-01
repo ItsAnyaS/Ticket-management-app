@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import './AuthPage.css'
 
 const SignUp = ({ setLoggedIn }) => {
     const [inputs, setInputs] = 
@@ -46,13 +47,13 @@ const SignUp = ({ setLoggedIn }) => {
 
     return (
         <div className='signup-body'>
-            <h3>Sign Up</h3>
+            <h3>&nbsp; &nbsp; &nbsp; Sign Up</h3>
             <form onSubmit={handleSubmit}>
-                <input type='email' placeholder='moviefan@website.com' name='email' value={inputs.email} onChange={handleChange} />
-                <input type='text' placeholder='John' name='first_name' value={inputs.first_name} onChange={handleChange} />
-                <input type='text' placeholder='Smith' name='last_name' value={inputs.last_name} onChange={handleChange} />
-                <input type='password' placeholder='password' name='password' value={inputs.password} onChange={handleChange} />
-                <button type='submit'>Sign Up</button>
+                <input className='login-input' type='email' placeholder='moviefan@website.com' name='email' value={inputs.email} onChange={handleChange} />
+                <input className='login-input' type='text' placeholder='John' name='first_name' value={inputs.first_name} onChange={handleChange} />
+                <input className='login-input' type='text' placeholder='Smith' name='last_name' value={inputs.last_name} onChange={handleChange} />
+                <input className='login-input' type='password' placeholder='password' name='password' value={inputs.password} onChange={handleChange} />
+                <button className='login-submit-button' type='submit'>Get Started!</button>
             </form>
         </div>
     )
