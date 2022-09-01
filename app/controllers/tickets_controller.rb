@@ -25,6 +25,11 @@ class TicketsController < ApplicationController
         )
     end
 
+    def change_user
+        ticket = Ticket.find_by(showtime_id: params[:showtime_id])
+        render json: ticket.update(user_id: params[:user_id])
+    end
+
     def tickets_by_user
         token = params[:user_id]
         if token

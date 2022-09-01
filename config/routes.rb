@@ -53,6 +53,8 @@ Rails.application.routes.draw do
   get '/tickets', to: 'tickets#index'
   get '/tickets/:id', to: 'tickets#show'
 
+  patch '/change_ticket', to: 'tickets#change_user'
+
 
   # auth
 

@@ -25,17 +25,15 @@ const CheckoutStage3 = (props) => {
     console.log(globalMovie)
 
     const handleCheckout = () => {
-        fetch('http://localhost:3000/tickets', {
-            method: 'POST',
+        fetch('http://localhost:3000/change_ticket', {
+            method: 'PATCH',
             headers: {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify({
-                price: 10,
-                showtime_id: showtime,
-                seat_id: seat.id,
+                showtime_id: showtime.id,
                 user_id: 1
-            }),
+            })
 })
     }
 
@@ -48,7 +46,7 @@ const CheckoutStage3 = (props) => {
             <div className='checkoutTicket'>
             <h2 className='ch3-cta'>Sign In or Join Now</h2>
             {isLoggedIn ? <button className='signin-checkout-btn' onClick={() => handleCheckout()}>Check out</button> 
-        :   <NavLink to='/authenticate'><button className='signin-checkout-btn' onClick={() => handleClickAuth()}>Sign in to check out </button></NavLink>} 
+        :   <NavLink to='/login'><button className='signin-checkout-btn' onClick={() => handleClickAuth()}>Sign in to check out </button></NavLink>} 
           
             </div>
 
