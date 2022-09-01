@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { useParams, useNavigate, NavLink } from "react-router-dom";
 import { MovieContext } from './App';
 import { useContext } from 'react';
+import './MoviePage.css'
 
 const MoviePage = () => {
     const [movie, setMovie] = useState({})
@@ -53,11 +54,10 @@ let newTheater = ''
 
 
     return ( 
-        <div>
-            <h2>MoviePage</h2>
-            <div className='banner-image'>
+        <div className='movie-page'>
+            <div >
                 {/* change src to `{movie.image}`` */}
-                <img src="./topgun.jpeg" alt="Movie poster" width="1100" height="600"/>
+                <img id='banner-image' src="./topgun.jpeg" alt="Movie poster"/>
             </div>
            <NavLink to='/checkout/1'> <button >Get Tickets</button></NavLink>
             <div key={movie.id}>
