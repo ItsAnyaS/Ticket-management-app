@@ -16,6 +16,11 @@ nav input {
   height: 15px;
 }
 
+.logo{
+  height: 50px;
+  margin-left: 20px;
+}
+
 
 .red-btn {
     background-color: #E51937;
