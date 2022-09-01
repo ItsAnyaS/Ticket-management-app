@@ -85,6 +85,7 @@ const CheckoutStage1 = () => {
                                     theaterId={theater_id} 
                                     startTime={start_time} 
                                     endTime={end_time}
+                                    showtime={showtime}
                                 />
                                 </NavLink>
                             )

@@ -16,4 +16,12 @@ class TicketsController < ApplicationController
         render json: ticket.showtime
     end
 
+    def create
+        ticket = Ticket.create(
+            showtime_id: params[:showtime_id],
+            seat_id: params[:seat_id],
+            price: params[:price],
+            user_id: params[:user_id],
+        )
+    end
 end

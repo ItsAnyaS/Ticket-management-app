@@ -47,6 +47,7 @@ Rails.application.routes.draw do
   delete '/users/:id', to: 'users#destroy'
   
   # tickets
+  post '/tickets', to: 'tickets#create'
 
   get '/tickets', to: 'tickets#index'
   get '/tickets/:id', to: 'tickets#show'

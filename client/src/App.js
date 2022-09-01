@@ -1,5 +1,6 @@
 import './App.css';
 import CheckoutPhaase2 from './CheckoutPhase2';
+import CheckOutStage3 from './CheckOutStage3'
 import Home from './Home'
 import Navbar from './Navbar';
 import SearchPage from './SearchPage';
@@ -24,11 +25,12 @@ return (
     <Routes>
       <Route exact key={1} path='/' element={<Home />}/>
       <Route exact key={2} path='/search' element={<SearchPage/>}/>
-      <Route exact key={5} path='/movie' element={<MoviePage/>}/>
-      <Route exact key={3} path='/checkout/1' element={<CheckoutStage1/>}/>
-      <Route key={4} path='/checkout/2' element={<CheckoutPhaase2/>}/>
-      <Route exact key={5} path='/authenticate' element={<AuthPage/>}/>
-      <Route exact key={6} path='/my_tickets' element={<MyTickets />}/>
+      <Route exact key={3} path='/movie' element={<MoviePage/>}/>
+      <Route exact key={4} path='/checkout/1' element={<CheckoutStage1/>}/>
+      <Route exact key={5} path='/checkout/2' element={<CheckoutPhaase2/>}/>
+      <Route exact key={6} path='/checkout/3' element={<CheckOutStage3/>}/>
+      <Route exact key={7} path='/authenticate' element={<AuthPage/>}/>
+      <Route exact key={8} path='/my_tickets' element={<MyTickets />}/>
     </Routes>
     </Router>
     </MovieContext.Provider>

@@ -1,4 +1,5 @@
 import { useState, useEffect, useContext } from "react"
+import { NavLink } from 'react-router-dom'
 import './CheckoutPhase2.css'
 
 import { MovieContext } from "./App"
@@ -19,8 +20,12 @@ const CheckoutPhaase2 = () => {
 
 
 console.log(seats)
-const handleSeatSelection = (e) => {
-    setSelectedSeat(e.target.value)
+const handleSeatSelection = (seat) => {
+    setSelectedSeat(seat.id)
+    setGlobalMovie({
+        ...globalMovie,
+        seat}
+    )
 }
 
 return (
@@ -33,8 +38,11 @@ return (
                 return (
                     <div key={seat?.id}   className={`seat ${seat.available ? '': 'taken'} `}>
                         {
-                            seat.available ? 
-                        <button value={seat?.id} onClick={handleSeatSelection} >{seat?.id}</button> : <div>X</div>
+                            seat.available ? (
+                                <NavLink to='/checkout/3'>
+                                    <button value={seat?.id} onClick={() => { handleSeatSelection(seat) }} >{seat?.id}</button> 
+                                </NavLink> 
+                            ) : <div>X</div>                           
                         }
                     </div>
                 )
