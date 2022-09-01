@@ -1,5 +1,6 @@
 import './App.css';
 import CheckoutPhaase2 from './CheckoutPhase2';
+import CheckoutStage3 from './CheckoutStage3';
 import Home from './Home'
 import Navbar from './Navbar';
 import SearchPage from './SearchPage';
@@ -26,7 +27,8 @@ return (
       <Route exact key={5} path='/movie' element={<MoviePage/>}/>
       <Route exact key={3} path='/checkout/1' element={<CheckoutStage1/>}/>
       <Route exact key={4} path='/checkout/2' element={<CheckoutPhaase2/>}/>
-      <Route exact key={5} path='/authenticate' element={<AuthPage/>}/>
+      <Route exact key={5} path='/checkout/3' element={<CheckoutStage3/>}/>
+      <Route exact key={6} path='/authenticate' element={<AuthPage/>}/>
     </Routes>
     </Router>
     </MovieContext.Provider>
