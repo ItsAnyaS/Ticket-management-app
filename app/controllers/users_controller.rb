@@ -3,8 +3,19 @@ class UsersController < ApplicationController
 
   def index
       user = User.all
-      render json: user
+      render json: user, include: :tickets
   end
+
+  def show
+    user = User.find_by!(id: params[:id])
+    render json: user, include: :tickets
+end
+
+def show_with_ticket_showtime
+    user = User.find_by!(id: params[:id])
+    render json: user.to_json(:include => { :tickets => { :include => { :showtime => { :include => :movie}}}})
+  end
+
 
   def create
       user = User.create!(first_name: params[:first_name], last_name: params[:last_name], email: params[:email], password: params[:password])
