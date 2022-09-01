@@ -2,24 +2,32 @@ import { useState, useEffect } from 'react'
 
 const MyTickets = () => {
 
-    const [user, setUser] = useState({})
     const [userTickets, setUserTickets] = useState([])
 
     useEffect(() => {
-        const getUser = async () => {
-            let req = await fetch('http://localhost:3000/users/1/tickets_showtimes')
+        const test = async () => {
+            const user_id = document.cookie.split('=')[1]
+            let req = await fetch(`http://localhost:3000/tickets/user`, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    "Cookie": document.cookie
+                },
+                body: JSON.stringify({ user_id: user_id })
+            })
             let res = await req.json()
-            setUser(res)
-            setUserTickets(res.tickets)
+            console.log('my tickets', res)
+            setUserTickets(res)
         }
-        getUser()
-    }, [])
+        test()
+    },[])
+
     return (
         <div className="my-tickets">
             {userTickets.map((ticket) => {
-                const { id, seat_id, price, showtime } = ticket
-                const { start_time, movie } = showtime
-                const { title } = movie
+                const { id, seat_id, price } = ticket
+                const { start_time, movie } = ticket.showtime
+                const { title } = ticket.showtime.movie
                     return (
                         <div className='ticket-card'>
                             <p>{title}</p>
@@ -29,7 +37,7 @@ const MyTickets = () => {
                         </div>
                     )
             })}
-            <div className="upcoming-tickets">
+            {/* <div className="upcoming-tickets">
                 <h3 className="large-text">Upcoming</h3>
                 <div className='tickets-container'>
 
@@ -40,7 +48,7 @@ const MyTickets = () => {
                 <div className='tickets-container'>
 
                 </div>
-            </div>
+            </div> */}
         </div>
     )
 }
