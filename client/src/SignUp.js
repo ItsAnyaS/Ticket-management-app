@@ -20,6 +20,13 @@ const SignUp = ({ setLoggedIn }) => {
         })
     }
 
+    const handleCaseInsensEmail = (e) => {
+        setInputs({
+            ...inputs,
+            [e.target.name]: e.target.value.toLowerCase()
+        })
+    }
+
     const handleSubmit = (e) => {
         e.preventDefault()
         addNewUser()

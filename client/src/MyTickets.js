@@ -1,37 +1,52 @@
 import { useState, useEffect } from 'react'
+import { NavLink } from 'react-router-dom'
+import './MyTickets.css'
 
 const MyTickets = () => {
 
-    const [user, setUser] = useState({})
     const [userTickets, setUserTickets] = useState([])
 
     useEffect(() => {
-        const getUser = async () => {
-            let req = await fetch('http://localhost:3000/users/1/tickets_showtimes')
+        const test = async () => {
+            const user_id = document.cookie.split('=')[1]
+            let req = await fetch(`http://localhost:3000/tickets/user`, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    "Cookie": document.cookie
+                },
+                body: JSON.stringify({ user_id: user_id })
+            })
             let res = await req.json()
-            setUser(res)
-            setUserTickets(res.tickets)
+            console.log('my tickets', res)
+            setUserTickets(res)
         }
-        getUser()
-    }, [])
+        test()
+    },[])
+
     return (
         <div className="my-tickets">
-            {userTickets.map((ticket) => {
-                const { id, seat_id, price, showtime } = ticket
-                const { start_time, movie } = showtime
-                const { title } = movie
-                    return (
-                        <div className='ticket-card'>
-                            <p>{title}</p>
-                            <p>{start_time}</p>
-                            <p>Seat No. {seat_id}</p>
-                            <p>${price}</p>
-                        </div>
-                    )
-            })}
-            <div className="upcoming-tickets">
+            {userTickets.length > 0 
+            ?
+                userTickets.map((ticket) => {
+                    const { id, seat_id, price } = ticket
+                    const { start_time, movie } = ticket.showtime
+                    const { title } = ticket.showtime.movie
+                        return (
+                            <div className='ticket-card'>
+                                <p>{title}</p>
+                                <p>{start_time}</p>
+                                <p>Seat No. {seat_id}</p>
+                                <p>${price}</p>
+                            </div>
+                        )
+                })
+                : <div className='ticketless'><NavLink to='/search'><button className='buy-product'>You have no tickets. CLICK HERE</button></NavLink></div>
+        }
+            {/* <div className="upcoming-tickets">
                 <h3 className="large-text">Upcoming</h3>
                 <div className='tickets-container'>
+                <NavLink to='/search'> <button className="nav-cta">Get Tickets</button></NavLink>
 
                 </div>
             </div>
@@ -40,7 +55,7 @@ const MyTickets = () => {
                 <div className='tickets-container'>
 
                 </div>
-            </div>
+            </div> */}
         </div>
     )
 }

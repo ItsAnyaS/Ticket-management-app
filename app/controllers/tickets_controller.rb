@@ -24,4 +24,18 @@ class TicketsController < ApplicationController
             user_id: params[:user_id],
         )
     end
+
+    def tickets_by_user
+        token = params[:user_id]
+        if token
+            decoded_token = JWT.decode token, nil, false
+            user = User.find_by(email: decoded_token[0]["data"])
+            tickets = Ticket.where(user_id: user["id"])
+            if tickets
+                render json: tickets.to_json(:include => { :showtime => { :include => :movie}})
+            end
+        else
+            render json: [{message: "Couldn't verify user", params: params}]
+        end
+    end
 end
